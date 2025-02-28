@@ -1,3 +1,8 @@
 .custom-logotipo {
     width: 50px;
 }
+
+.custom-height-banner {
+    height: 10000px;
+    /* Por defecto: 100% del viewport height */
+}
