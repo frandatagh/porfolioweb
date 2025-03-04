@@ -6,3 +6,42 @@
     height: 10000px;
     /* Por defecto: 100% del viewport height */
 }
+
+.custom-banner-pt {
+    padding-top: 6rem;
+    /* 96px */
+}
+
+.custom-title {
+    font-size: 1rem;
+    /* Tamaño base */
+}
+
+.custom-subtitle {
+    font-size: 1.5rem;
+    /* Tamaño base */
+}
+
+@media (min-width: 768px) {
+
+    /* Pantallas medianas y grandes */
+    .custom-title {
+        font-size: 1.3rem;
+    }
+
+    .custom-subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+
+    /* Pantallas grandes */
+    .custom-title {
+        font-size: 1.5rem;
+    }
+
+    .custom-subtitle {
+        font-size: 2rem;
+    }
+}
