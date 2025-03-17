@@ -29,19 +29,20 @@
 
 .container-me-info {
     overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
+    transition: 1s;
 }
 
 /* En pantallas pequeñas, limita la altura al 40% */
 @media (max-width: 767.98px) {
     .container-me-info {
         max-height: 10vh;
+
         /* 40% del viewport height */
     }
 
     /* Cuando se agrega la clase "expanded", muestra el contenido completo */
     .container-me-info.expanded {
-        max-height: 100%;
+        max-height: 100vh;
         /* Un valor suficientemente grande */
     }
 }
