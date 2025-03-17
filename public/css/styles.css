@@ -41,7 +41,7 @@
 
     /* Cuando se agrega la clase "expanded", muestra el contenido completo */
     .container-me-info.expanded {
-        max-height: 40vh;
+        max-height: 100%;
         /* Un valor suficientemente grande */
     }
 }
