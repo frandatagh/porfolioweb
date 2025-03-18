@@ -1,3 +1,12 @@
+/*
+paleta de colores:
+black 00000
+oxford blue 14213D - acr (1A202D)
+orange web FCA311 - acr (D0A866)
+platinum E5E5E5
+white FFFFF
+*/
+
 .custom-logotipo {
     width: 50px;
 }
@@ -45,6 +54,12 @@
         max-height: 100vh;
         /* Un valor suficientemente grande */
     }
+}
+
+/*estilos de tarjetas de proyectos*/
+.project-card {
+    width: 30%;
+    background-color: blueviolet;
 }
 
 @media (min-width: 768px) {
