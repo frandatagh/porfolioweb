@@ -41,6 +41,16 @@ white FFFFF
     transition: 1s;
 }
 
+/*transiciones----------------------------*/
+@keyframes showup {
+    0% {
+        sda
+    }
+
+    100% {}
+}
+
+
 /* En pantallas pequeñas, limita la altura al 40% */
 @media (max-width: 767.98px) {
     .container-me-info {
