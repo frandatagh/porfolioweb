@@ -44,10 +44,16 @@ white FFFFF
 /*transiciones----------------------------*/
 @keyframes showup {
     0% {
-        sdafsafa
+        opacity: 0;
+        transform: translateY(20px);
+        /* Mueve el elemento 20px hacia abajo */
     }
 
-    100% {}
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* Vuelve a su posición original */
+    }
 }
 
 
