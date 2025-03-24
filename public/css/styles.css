@@ -36,12 +36,23 @@ white FFFFF
     position: relative;
 }
 
+
 .container-me-info {
     overflow: hidden;
     transition: 1s;
 }
 
 /*transiciones----------------------------*/
+/*agregar estos atributos para transicionar un show up*/
+
+.element-showup {
+    opacity: 0;
+}
+
+.element-showup.visible {
+    animation: showup 1s ease-out forwards;
+}
+
 @keyframes showup {
     0% {
         opacity: 0;
