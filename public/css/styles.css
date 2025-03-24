@@ -7,6 +7,11 @@ platinum E5E5E5
 white FFFFF
 */
 
+body {
+    background-color: rgb(34, 34, 34) !important;
+    color: white;
+}
+
 .custom-logotipo {
     width: 50px;
 }
