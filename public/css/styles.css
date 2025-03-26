@@ -16,14 +16,21 @@ body {
     width: 50px;
 }
 
-.custom-height-banner {
-    height: 10000px;
-    /* Por defecto: 100% del viewport height */
+.img-profile {
+    width: 50%;
+    /* Para móviles */
+    max-width: 180px;
+    /* Máximo en móvil */
 }
 
-.custom-banner-pt {
-    padding-top: 6rem;
-    /* 96px */
+@media (min-width: 768px) {
+
+    /* Tablet + Desktop */
+    .img-profile {
+        width: 80%;
+        max-width: 280px;
+        min-width: 200px;
+    }
 }
 
 .custom-title {
