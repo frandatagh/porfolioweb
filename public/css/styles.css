@@ -19,33 +19,8 @@ body {
 .img-profile {
     width: 50%;
     /* Para móviles */
-    max-width: 180px;
+    max-width: 300px;
     /* Máximo en móvil */
-}
-
-@media (min-width: 768px) {
-
-    /* Tablet + Desktop */
-    .img-profile {
-        width: 80%;
-        max-width: 280px;
-        min-width: 200px;
-    }
-}
-
-.custom-title {
-    font-size: 1rem;
-    /* Tamaño base */
-}
-
-.custom-subtitle {
-    font-size: 1.5rem;
-    /* Tamaño base */
-}
-
-.custom-subtitle2 {
-    text-align: center;
-    font-size: 1rem;
 }
 
 /*contenedor acerca de mí-----------------------*/
@@ -115,6 +90,13 @@ body {
 
     .custom-subtitle {
         font-size: 1.5rem;
+    }
+
+    /* Tablet + Desktop */
+    .img-profile {
+        width: 80%;
+        max-width: 280px;
+        min-width: 200px;
     }
 }
 

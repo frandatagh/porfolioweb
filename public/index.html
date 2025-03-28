@@ -44,29 +44,38 @@
       </div>
     </div>
   </nav>
-  <div class="container element-showup vh-100 d-flex align-items-center justify-content-center">
+  <div class="container vh-100 d-flex align-items-center">
     <div class="row align-items-center">
-        <div class=" d-flex align-items-center justify-content-center flex-column col-md-8 order-2 order-md-1">
-          <h2 class="custom-title">Bienvenidos, soy Franco</h2>
-          <h1 class="custom-subtitle">Analista y Desarrollador FullStack</h1>
-          <h3 class="custom-subtitle2 mx-2 p-2">Especializado en FrontEnd + React + Node.js.<br/> Me apasiona resolver problemas técnicos complejos y optimizar el rendimiento para construir aplicaciones escalables y de alto impacto.</h3>
-          <div>
-            <a href=""><i class="fa-brands fa-square-github fs-1 p-2"></i></a>
-            <a href=""><i class="fa-brands fa-linkedin fs-1 p-2"></i></a>
-            <a href=""><i class="fa-solid fa-file-arrow-down fs-1 p-2"></i></a>
-            <a href=""><i class="fa-solid fa-envelope fs-1 p-2"></i></a>
-          </div>
-          <div class="">
-            <a href="" class="d-flex justify-content-center align-items-center flex-column">
-              <p class="">Mainprojects</p>
-              <i class="fa-solid fa-arrow-down"></i>
-            </a>
-          </div>
+      <!-- Columna de Imagen (primera en móvil) -->
+      <div class="col-12 col-md-4 order-1 order-md-2 text-center">
+        <img src="./media/foto-perfil/perfil01.png" 
+             class="img-fluid rounded-circle shadow-lg img-profile">
+      </div>
+      
+      <!-- Columna de Texto (segunda en móvil) -->
+      <div class="col-12 col-md-8 order-2 order-md-1">
+        <div class="text-center text-md-start">
+          <!-- Títulos responsivos -->
+          <h1 class="display-5 display-md-4 display-lg-3 mb-3">Franco Ruiz</h1>
+          <h2 class="fs-4 fs-md-3 fs-lg-2 mb-3 text-primary">PruebaAnalista Programador Full Stack</h2>
+          <h3 class="fs-5 fs-lg-4 text-muted mb-4">Especializado en FrontEnd + React + Node.js</h3>
         </div>
-        <div class="col-md-4 order-1 order-md-2 mb-4 mb-md-0 d-flex justify-content-center">
-          <img src="./media/foto-perfil/perfil01.png" 
-               class="img-fluid rounded-circle shadow-lg img-profile">
+        
+        <!-- Iconos redes sociales -->
+        <div class="d-flex justify-content-center justify-content-md-start gap-3 mb-4">
+          <a href="#" class="text-dark fs-3"><i class="fa-brands fa-square-github"></i></a>
+          <a href="#" class="text-primary fs-3"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" class="text-danger fs-3"><i class="fa-solid fa-file-arrow-down"></i></a>
+          <a href="#" class="text-info fs-3"><i class="fa-solid fa-envelope"></i></a>
         </div>
+        
+        <!-- Botón -->
+        <div class="text-center text-md-start">
+          <button class="btn btn-primary px-4 py-2 rounded-pill">
+            Main Projects <i class="fa-solid fa-arrow-right ms-2"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   
