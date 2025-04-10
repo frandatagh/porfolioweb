@@ -10,6 +10,38 @@ white FFFFF
 body {
     background-color: rgb(34, 34, 34);
     color: white;
+    padding-left: 70px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 70px;
+    background-color: #343a40;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1000;
+    transition: 0.5s;
+}
+
+.sidebar:hover {
+    width: 170px;
+}
+
+.sidebar button {
+    margin: 10px 0;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+}
+
+.sidebar button:hover {
+    color: #0d6efd;
 }
 
 .custom-logotipo {
