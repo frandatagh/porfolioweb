@@ -24,14 +24,39 @@ const imageList = [
 ];
 
 let currentIndex = 0; // Inicia con la imagen predeterminada
+let scale = 1; // Tamaño inicial
+const scaleStep = 0.1; // Cuánto crece en cada click
+const maxScale = 1.8; // Tamaño máximo permitido
+let resetTimeout; // Para controlar el tiempo de inactividad
+
 
 profilePic.addEventListener('click', () => {
+  // Aumentar el tamaño hasta el máximo permitido
+  scale = Math.min(scale + scaleStep, maxScale);
+  profilePic.style.transform = `scale(${scale})`;
+
+  // Reiniciar el temporizador si ya existe
+  clearTimeout(resetTimeout);
+
+  // Establecer un nuevo timeout de 2 segundos para volver al tamaño original
+  resetTimeout = setTimeout(() => {
+    scale = 1;
+    profilePic.style.transform = `scale(${scale})`;
+  }, 2000);
+
   // Avanzar al siguiente índice, volver a 0 si se pasa del último
   currentIndex = (currentIndex + 1) % imageList.length;
 
   // Cambiar la imagen de perfil
   profilePic.src = imageList[currentIndex];
 });
+
+const profileImg = document.getElementById('profile-pic');
+
+    
+    profileImg.addEventListener('click', () => {
+      
+    });
 
 //-----------------------------------
 

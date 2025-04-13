@@ -53,6 +53,7 @@ body {
     /* Para móviles */
     max-width: 300px;
     /* Máximo en móvil */
+    cursor: pointer;
 }
 
 /*contenedor acerca de mí-----------------------*/
