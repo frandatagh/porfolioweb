@@ -54,6 +54,67 @@ body {
     max-width: 300px;
     /* Máximo en móvil */
     cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    20% {
+        transform: scale(1.1);
+    }
+
+    40% {
+        transform: scale(0.97);
+    }
+
+    60% {
+        transform: scale(1.03);
+    }
+
+    80% {
+        transform: scale(0.99);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.bounce {
+    animation: bounce 0.6s ease;
+}
+
+@keyframes clickBounce {
+    0% {
+        transform: scale(1);
+    }
+
+    20% {
+        transform: scale(1.1);
+    }
+
+    40% {
+        transform: scale(0.97);
+    }
+
+    60% {
+        transform: scale(1.03);
+    }
+
+    80% {
+        transform: scale(0.99);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.click-bounce {
+    animation: clickBounce 0.6s ease-out;
 }
 
 /*contenedor acerca de mí-----------------------*/
@@ -65,6 +126,12 @@ body {
 .container-me-info {
     overflow: hidden;
     transition: 1s;
+}
+
+#aboutme {
+    width: 80%;
+    margin: auto;
+    min-width: 500px;
 }
 
 /*transiciones----------------------------*/

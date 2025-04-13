@@ -25,7 +25,7 @@ const imageList = [
 
 let currentIndex = 0; // Inicia con la imagen predeterminada
 let scale = 1; // Tamaño inicial
-const scaleStep = 0.1; // Cuánto crece en cada click
+  const scaleStep = 0.1; // Cuánto crece en cada click
 const maxScale = 1.8; // Tamaño máximo permitido
 let resetTimeout; // Para controlar el tiempo de inactividad
 
@@ -35,28 +35,38 @@ profilePic.addEventListener('click', () => {
   scale = Math.min(scale + scaleStep, maxScale);
   profilePic.style.transform = `scale(${scale})`;
 
+  // 🔄 Rebote leve personalizado desde el tamaño actual
+  profilePic.animate([
+    { transform: `scale(${scale})` },
+    { transform: `scale(${scale + 0.05})` },
+    { transform: `scale(${scale})` }
+  ], {
+    duration: 300,
+    easing: 'ease-out'
+  });
+
   // Reiniciar el temporizador si ya existe
   clearTimeout(resetTimeout);
 
-  // Establecer un nuevo timeout de 2 segundos para volver al tamaño original
+  // Timeout para volver al tamaño original con rebote fuerte
   resetTimeout = setTimeout(() => {
     scale = 1;
     profilePic.style.transform = `scale(${scale})`;
+
+    profilePic.classList.add('bounce');
+    setTimeout(() => {
+      profilePic.classList.remove('bounce');
+    }, 600);
   }, 2000);
 
-  // Avanzar al siguiente índice, volver a 0 si se pasa del último
+  // Avanzar al siguiente índice
   currentIndex = (currentIndex + 1) % imageList.length;
 
   // Cambiar la imagen de perfil
   profilePic.src = imageList[currentIndex];
 });
 
-const profileImg = document.getElementById('profile-pic');
 
-    
-    profileImg.addEventListener('click', () => {
-      
-    });
 
 //-----------------------------------
 
