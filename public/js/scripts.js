@@ -11,27 +11,29 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 function scrollToSection(id) {
   document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
+//Cambiar imagen de perfil -----
+const profilePic = document.getElementById('profile-pic');
 
-const profilePics = [
-  'perfil1.jpg',
-  'perfil2.jpg',
-  'perfil3.jpg',
-  'perfil4.jpg'
+// Array con las rutas de las imágenes
+const imageList = [
+  './media/foto-perfil/perfil01.png',
+  './media/foto-perfil/perfil02.png',
+  './media/foto-perfil/perfil03.png',
+  './media/foto-perfil/perfil04.png',
+  './media/foto-perfil/perfil05.png'
 ];
 
-// Referencia al elemento <img>
-const profileImg = document.getElementById('profile-pic');
+let currentIndex = 0; // Inicia con la imagen predeterminada
 
-// Índice actual
-let currentIndex = 0;
+profilePic.addEventListener('click', () => {
+  // Avanzar al siguiente índice, volver a 0 si se pasa del último
+  currentIndex = (currentIndex + 1) % imageList.length;
 
-// Evento de click
-profileImg.addEventListener('click', () => {
-  // Avanzar al siguiente índice (cíclico)
-  currentIndex = (currentIndex + 1) % profilePics.length;
-  // Cambiar la imagen
-  profileImg.src = profilePics[currentIndex];
+  // Cambiar la imagen de perfil
+  profilePic.src = imageList[currentIndex];
 });
+
+//-----------------------------------
 
   toggleButton.addEventListener("click", function () {
     infoContent.classList.toggle("expanded");
