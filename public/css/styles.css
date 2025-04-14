@@ -123,6 +123,7 @@ body {
     /* Ajustá al tamaño de tu imagen */
     height: 200px;
     margin: auto;
+    font-family: 'contador-font', sans-serif;
 }
 
 #profile-pic {
@@ -163,7 +164,12 @@ body {
     }
 }
 
-
+@font-face {
+    font-family: 'contador-font';
+    src: url('/public/media/fonts/comic-font.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /*contenedor acerca de mí-----------------------*/
 .container-me {
