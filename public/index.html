@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
+  <script type="module" src="./js/click-tracker.js"></script>
   <div class="sidebar">
     <button data-bs-toggle="tooltip" data-bs-placement="right" title="Inicio" onclick="scrollToSection('inicio')">
       <i class="bi bi-house-door"></i>
@@ -31,8 +32,23 @@
     <div class="row align-items-center">
       <!-- Columna de Imagen (primera en móvil) -->
       <div class="col-12 col-md-4 order-1 order-md-2 text-center">
-        <img id="profile-pic" src="./media/foto-perfil/perfil01.png" 
-             class="img-fluid rounded-circle shadow-lg img-profile">
+        <div class="profile-container">
+          <img id="profile-pic" src="./media/foto-perfil/perfil01.png" 
+               class="img-fluid rounded-circle shadow-lg img-profile">
+               <div id="profile-title" class="pointer-hint">
+                <div id="click-text">
+                  <h5>click or tap</h5>
+                  <h5>to play</h5>
+                  <i id="arrow-icon" class="fa-solid fa-caret-down"></i>
+                </div>
+                <div id="click-counter" style="display: none;">
+                  <h5>más clicks:</h5>
+                  <h5 id="click-count" class="click-counter">0</h5>
+                </div>
+              </div>
+          
+        </div>
+        
       </div>
       
       <!-- Columna de Texto (segunda en móvil) -->
