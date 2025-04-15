@@ -22,13 +22,14 @@ body {
     background-color: #343a40;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding-top: 20px;
     z-index: 1000;
-    transition: 0.5s;
+    transition: width 0.4s ease;
 }
 
-.sidebar:hover {
+.sidebar:hover,
+.sidebar.open {
     width: 170px;
 }
 
@@ -38,10 +39,31 @@ body {
     background: none;
     border: none;
     font-size: 1.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    transition: background 0.3s ease;
 }
 
 .sidebar button:hover {
-    color: #0d6efd;
+    background-color: #495057;
+}
+
+.sidebar i {
+    margin-right: 10px;
+}
+
+.sidebar .label {
+    opacity: 0;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar:hover .label,
+.sidebar.open .label {
+    opacity: 1;
 }
 
 .custom-logotipo {
@@ -122,8 +144,10 @@ body {
     width: 200px;
     /* Ajustá al tamaño de tu imagen */
     height: 200px;
+    margin-top: 20px;
     margin: auto;
     font-family: 'contador-font', sans-serif;
+
 }
 
 #profile-pic {
@@ -134,15 +158,26 @@ body {
 
 #profile-title {
     position: absolute;
-    top: -50px;
+    top: -35px;
     /* un poco arriba de la imagen */
-    left: 50%;
+    left: 52%;
     transform: translateX(-50%);
     pointer-events: none;
     text-align: center;
     font-weight: bold;
     color: #fff;
     text-shadow: 0 0 5px #000;
+    opacity: 0.5;
+    transition: opacity 0.4s ease, color 0.4s ease;
+}
+
+.click-text {
+    margin-top: -12px;
+}
+
+.click-counter {
+    margin-top: -12px;
+    margin-left: 40px;
 }
 
 /* 🔄 Nueva animación sutil tipo “señalando” */

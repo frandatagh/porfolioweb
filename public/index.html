@@ -9,21 +9,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
-  <div class="sidebar">
-    <button data-bs-toggle="tooltip" data-bs-placement="right" title="Inicio" onclick="scrollToSection('inicio')">
+  <div class="sidebar" id="sidebar">
+    <button onclick="scrollToSection('inicio')">
       <i class="bi bi-house-door"></i>
+      <span class="label">Inicio</span>
     </button>
-    <button data-bs-toggle="tooltip" data-bs-placement="right" title="Acerca de mí" onclick="scrollToSection('acerca')">
+    <button onclick="scrollToSection('acerca')">
       <i class="bi bi-person"></i>
+      <span class="label">Acerca de mí</span>
     </button>
-    <button data-bs-toggle="tooltip" data-bs-placement="right" title="Mis Proyectos" onclick="scrollToSection('proyectos')">
+    <button onclick="scrollToSection('proyectos')">
       <i class="bi bi-folder2-open"></i>
+      <span class="label">Proyectos</span>
     </button>
-    <button data-bs-toggle="tooltip" data-bs-placement="right" title="Educación" onclick="scrollToSection('educacion')">
+    <button onclick="scrollToSection('educacion')">
       <i class="bi bi-mortarboard"></i>
+      <span class="label">Educación</span>
     </button>
-    <button data-bs-toggle="tooltip" data-bs-placement="right" title="Contacto" onclick="scrollToSection('contacto')">
+    <button onclick="scrollToSection('contacto')">
       <i class="bi bi-envelope"></i>
+      <span class="label">Contacto</span>
     </button>
   </div>
 
@@ -34,15 +39,15 @@
         <div class="profile-container">
           <img id="profile-pic" src="./media/foto-perfil/perfil01.png" 
                class="img-fluid rounded-circle shadow-lg img-profile">
-               <div id="profile-title" class="pointer-hint">
-                <div id="click-text">
+              <div id="profile-title" class="pointer-hint">
+                <div id="click-text" >
                   <h5>click or tap</h5>
-                  <h5>to play</h5>
-                  <i id="arrow-icon" class="fa-solid fa-caret-down"></i>
+                  <h5 class="click-text">to play</h5>
+                  <i id="arrow-icon" class="fa-solid fa-caret-down "></i>
                 </div>
                 <div id="click-counter" style="display: none;">
-                  <h5>mas clicks:</h5>
-                  <h5 id="click-count" class="click-counter">0</h5>
+                  <h5>more clicks!</h5>
+                  <h5 id="click-count" class="click-counter"></h5>
                 </div>
               </div>
           
@@ -83,7 +88,7 @@
       <div id="container-me" class="container-me element-showup ">
         <div class="container-me-info">
           <h5>
-            Actualmente, soy Desarrollador Web en tecnologías de Front End y Back End. Mis habilidades principales son HTML5, CSS3, JavaScript Moderno (ES6, ES7, ES8, ES9 y ES10), REACT.JS. También: Java, XML, JSON, GIT, APIs REST, PWA, y React Router, Hooks, SQL, MYSQL. Uso de tecnologías como: Tailwind y Bootstrap.
+            Actualmente, soy Desarrollador Web en tecnologías de Front End y Back End. Me gusta la programación  y trabajar sobre proyectos escalables. is habilidades principales son HTML5, CSS3, JavaScript Moderno (ES6, ES7, ES8, ES9 y ES10), REACT.JS. También: Java, XML, JSON, GIT, APIs REST, PWA, y React Router, Hooks, SQL, MYSQL. Uso de tecnologías como: Tailwind y Bootstrap.
             <a href="">Más detalles e información aquí.</a> 
           </h5>
         </div>

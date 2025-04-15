@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
   [...tooltipTriggerList].forEach(el => new bootstrap.Tooltip(el));
 
+  
+
   // Scroll a secciones
   function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
@@ -93,6 +95,33 @@ document.addEventListener("DOMContentLoaded", function () {
     animateBounce(profilePic, scale);
     animateBounce(profileTitle, scale);
 
+    // Incrementar opacidad del título hasta 1.0
+    let currentOpacity = parseFloat(getComputedStyle(profileTitle).opacity);
+    if (currentOpacity < 1.0) {
+      currentOpacity = Math.min(1.0, currentOpacity + 0.1);
+      profileTitle.style.opacity = currentOpacity;
+    } else {
+    // Cambiar color una vez que opacidad es 1
+    const colors = ['#f87171', '#fbbf24', '#34d399', '#60a5fa', '#c084fc'];
+    const currentColor = profileTitle.style.color;
+    let nextColor = colors[Math.floor(Math.random() * colors.length)];
+    // Asegurar que no repita el mismo color
+    while (nextColor === currentColor) {
+      nextColor = colors[Math.floor(Math.random() * colors.length)];
+    }
+    profileTitle.style.color = nextColor;
+    }
+
+    // 👉 Rebote leve en el número del contador
+    clickCountDisplay.animate([
+      { transform: `scale(1)` },
+      { transform: `scale(1.2)` },
+      { transform: `scale(1)` }
+    ], {
+      duration: 300,
+      easing: 'ease-out'
+    });
+
     clearTimeout(resetTimeout);
 
     // Volver a tamaño normal con rebote después de 2s
@@ -100,6 +129,10 @@ document.addEventListener("DOMContentLoaded", function () {
       scale = 1;
       profilePic.style.transform = `scale(1)`;
       profileTitle.style.transform = `scale(1)`;
+
+      profileTitle.style.transform = `scale(1)`;
+      profileTitle.style.opacity = 0.6;
+      profileTitle.style.color = ''; // vuelve al color por defecto del CSS
 
       profilePic.classList.add('bounce');
       profileTitle.classList.add('bounce');
@@ -140,4 +173,14 @@ document.addEventListener("DOMContentLoaded", function () {
   elementos.forEach((elemento) => {
     observer.observe(elemento);
   });
+
+  // 🧠 Sidebar: expandir con click o hover
+const sidebar = document.getElementById('sidebar');
+
+// Abrir/cerrar con click
+sidebar.addEventListener('click', () => {
+  sidebar.classList.toggle('open');
+});
+
+// También se mantiene la apertura con hover vía CSS
 });
