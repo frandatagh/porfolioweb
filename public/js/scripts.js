@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
   }
 
+  
+
   // Cambiar imagen de perfil
   const profilePic = document.getElementById('profile-pic');
   const profileTitle = document.getElementById('profile-title');
@@ -75,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Mostrar elementos la primera vez
     if (!hasClicked) {
       profileTitle.classList.remove('pointer-hint');
+      profileTitle.style.top = '-25px';
       arrowIcon.style.transition = 'opacity 0.4s ease';
       arrowIcon.style.opacity = '0';
       setTimeout(() => arrowIcon.style.display = 'none', 400);
@@ -181,6 +184,52 @@ const sidebar = document.getElementById('sidebar');
 sidebar.addEventListener('click', () => {
   sidebar.classList.toggle('open');
 });
+
+////Animacion del titulo
+///**
+ //Aplica efecto de máquina de escribir a texto existente en un elemento HTML
+ //@param {string} targetId - ID del elemento que contiene el texto a animar
+ //@param {number} [speed=100] - Velocidad en milisegundos entre letras
+ //@param {boolean} [keepOriginal=true] - Mantener el texto original después de la animación
+ //
+
+ 
+
+ function animateExistingText(targetId, speed = 100, keepOriginal = true) {
+  const element = document.getElementById(targetId);
+  
+  if (!element) {
+    console.error(`Elemento con ID ${targetId} no encontrado`);
+    return;
+  }
+
+  // Guardar el texto original
+  const originalText = element.textContent;
+  let currentText = '';
+  let i = 0;
+
+  // Limpiar el elemento para la animación
+  element.textContent = '';
+
+  function type() {
+    if (i < originalText.length) {
+      currentText += originalText.charAt(i);
+      element.textContent = currentText;
+      i++;
+      setTimeout(type, speed);
+    } else if (!keepOriginal) {
+      // Opcional: restaurar el texto original (sin animación)
+      element.textContent = originalText;
+    }
+  }
+
+  type();
+}
+ // Animación básica
+ animateExistingText('h-name', 80, false);
+
+ // Con opciones personalizadas 
+ animateExistingText('h-subname', 40, false); 
 
 // También se mantiene la apertura con hover vía CSS
 });
