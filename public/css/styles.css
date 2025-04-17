@@ -208,15 +208,27 @@ body {
 }
 
 /*presentacion*/
-
-.logo-titulo {
+.logo-titulo-github {
     font-size: 30px;
-    transition: 0.6s;
+    color: gray;
 }
 
-.logo-titulo:hover {
-    color: rgb(117, 199, 29);
+.logo-titulo-download {
+    font-size: 29px;
+    color: gray;
 }
+
+.logo-titulo-mail {
+    font-size: 31px;
+    color: gray;
+}
+
+.logo-titulo-linked {
+    font-size: 30px;
+    color: gray;
+}
+
+
 
 /*contenedor acerca de mí-----------------------*/
 .container-me {
@@ -232,10 +244,16 @@ body {
 #aboutme {
     width: 80%;
     margin: auto;
-    min-width: 500px;
-    background-color: #142135;
-
+    min-width: 400px;
 }
+
+.acercademi {
+    padding-top: 30px;
+    padding-bottom: 70px;
+    background-color: #142135;
+}
+
+
 
 /*transiciones----------------------------*/
 /*agregar estos atributos para transicionar un show up*/
