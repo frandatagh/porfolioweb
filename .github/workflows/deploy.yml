@@ -23,4 +23,4 @@ jobs:
           path: 'public/'  # Asegúrate de que esta carpeta exista
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2  # Versión correcta
+        uses: actions/deploy-pages@v4  # Versión correcta
