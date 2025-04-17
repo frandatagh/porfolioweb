@@ -2,6 +2,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ "main" ]  # Cambia a "master" si usas esa rama
+
+permissions:
+  pages: write
+  id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,7 +20,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: '.public/'  # ¡Especifica tu carpeta aquí!
+          path: 'public/'  # Asegúrate que esta carpeta existe
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
