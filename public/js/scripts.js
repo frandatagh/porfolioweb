@@ -231,5 +231,6 @@ sidebar.addEventListener('click', () => {
  // Con opciones personalizadas 
  animateExistingText('h-subname', 40, false); 
 
+
 // También se mantiene la apertura con hover vía CSS
 });

@@ -16,20 +16,28 @@
     </button>
     <button onclick="scrollToSection('acerca')">
       <i class="bi bi-person"></i>
-      <span class="label">Acerca de mí</span>
+      <span id="side-text" class="label">Acerca de mí</span>
     </button>
     <button onclick="scrollToSection('proyectos')">
       <i class="bi bi-folder2-open"></i>
-      <span class="label">Proyectos</span>
+      <span id="side-text" class="label">Proyectos</span>
     </button>
     <button onclick="scrollToSection('educacion')">
       <i class="bi bi-mortarboard"></i>
-      <span class="label">Educación</span>
+      <span id="side-text" class="label">Educación</span>
     </button>
     <button onclick="scrollToSection('contacto')">
       <i class="bi bi-envelope"></i>
-      <span class="label">Contacto</span>
+      <span id="side-text" class="label">Contacto</span>
     </button>
+    <div class="panel-control">
+      <div class="config-control">
+
+      </div>
+      <div class="logo-control">
+        <i class="fa-brands fa-google"></i>
+      </div>
+    </div>
   </div>
 
   <div class="container vh-100 d-flex justify-content-center align-items-center">
@@ -59,9 +67,9 @@
       <div class="col-12 col-md-8 order-2 order-md-1">
         <div class="text-center text-md-start">
           <!-- Títulos responsivos -->
-          <h1 id="h-name" class="display-5 display-md-4 display-lg-3 mb-3">Franco Ruiz</h1>
+          <h1 id="h-name" class="display-5 display-md-4 display-lg-3 mb-3">Hola, soy Franco</h1>
           <h2 id="h-subname" class="fs-4 fs-md-3 fs-lg-2 mb-3 text-primary">Analista y Desarrollador Web</h2>
-          <h3 class="fs-5 fs-lg-4  mb-4 h-descrip">Especializado en tecnologias de FrontEnd <br/> + Javascript + React + Node.js</h3>
+          <h3 class="fs-5 fs-lg-4  mb-4 h-descrip">Especializado en tecnologias de FrontEnd <br/>+{Javascript}+{Node}+{React}</h3>
         </div>
         
         <!-- Iconos redes sociales -->
@@ -74,8 +82,8 @@
         
         <!-- Botón -->
         <div class="text-center text-md-start">
-          <button class="btn btn-primary px-4 py-2 rounded-pill">
-            Main Projects <i class="fa-solid fa-arrow-right ms-2"></i>
+          <button id="button-mainproj" class="btn btn-primary px-4 py-2 rounded-pill">
+            Main Projects <i class="fa-regular fa-window-restore"></i>
           </button>
         </div>
       </div>
@@ -107,7 +115,7 @@
       <div class="col-12 col-md-6 col-lg-4 mb-4">
         <div class="project-card element-showup p-2 w-100 rounded">
           <div>
-            <img src="./media/1590690690-front-end.jpg" class="rounded img-fluid">
+            <img src="./media/humanoides-card.png" class="rounded img-fluid">
           </div>
           <div>
             <h5>Humanoides Fanpage</h5>
@@ -118,7 +126,7 @@
       <div class="col-12 col-md-6 col-lg-4 mb-4">
         <div class="project-card element-showup p-2 w-100 rounded">
           <div>
-            <img src="./media/1590690690-front-end.jpg" class="rounded img-fluid">
+            <img src="./media/lostilos-card.png" class="rounded img-fluid">
           </div>
           <div>
             <h5>Psicoterapia Los Tilos</h5>

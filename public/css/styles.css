@@ -18,23 +18,23 @@ body {
     top: 0;
     left: 0;
     height: 100vh;
-    width: 70px;
+    width: 65px;
     background-color: #343a40;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+
     padding-top: 20px;
     z-index: 1000;
-    transition: width 0.4s ease;
+    transition: width 0.6s ease;
 }
 
 .sidebar:hover,
 .sidebar.open {
-    width: 170px;
+    width: 200px;
 }
 
 .sidebar button {
-    margin: 10px 0;
+    margin: 5px 0;
     color: white;
     background: none;
     border: none;
@@ -42,28 +42,53 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 8px 12px;
-    transition: background 0.3s ease;
+    padding: 8px 20px;
+    transition: background 0.6s ease;
 }
 
 .sidebar button:hover {
+    color: #14213D;
+    font-weight: 600;
     background-color: #495057;
 }
 
+.sidebar span:hover {
+    color: white;
+}
+
 .sidebar i {
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .sidebar .label {
     opacity: 0;
     font-size: 0.9rem;
     white-space: nowrap;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.6s ease;
 }
 
 .sidebar:hover .label,
 .sidebar.open .label {
     opacity: 1;
+}
+
+.panel-control {
+    height: 50%;
+    /*background-color: red;*/
+}
+
+.config-control {
+    height: 80%;
+    /*background-color: #142135;*/
+}
+
+.logo-control {
+    padding-top: 15px;
+    padding-left: 22px;
+}
+
+.logo-control i {
+    top: 15px;
 }
 
 .custom-logotipo {
@@ -209,8 +234,14 @@ body {
 
 /*presentacion*/
 .logo-titulo-github {
-    font-size: 30px;
+    font-size: 31px;
     color: gray;
+
+}
+
+.logo-titulo-github:hover {
+    color: #000;
+    transition: 0, 6s;
 }
 
 .logo-titulo-download {
@@ -218,14 +249,42 @@ body {
     color: gray;
 }
 
+.logo-titulo-download:hover {
+    transition: 0, 6s;
+    color: white;
+}
+
 .logo-titulo-mail {
     font-size: 31px;
     color: gray;
 }
 
+.logo-titulo-mail:hover {
+    transition: 0, 6s;
+    color: rgb(60, 244, 198);
+}
+
 .logo-titulo-linked {
     font-size: 30px;
     color: gray;
+}
+
+.logo-titulo-linked:hover {
+    transition: 0, 6s;
+    color: rgb(79, 66, 255);
+}
+
+#button-mainproj {
+    background-color: #FCA311;
+    color: #000;
+    font-weight: bold;
+    border: 2px solid black;
+}
+
+#button-mainproj:hover {
+    background-color: #e3a645;
+    color: #fff;
+    border: 2px solid white;
 }
 
 
@@ -299,7 +358,13 @@ body {
 /*estilos de tarjetas de proyectos*/
 .project-card {
     width: 30%;
-    background-color: blueviolet;
+    background-color: #14213D;
+    border: 2px solid white;
+}
+
+.project-card:hover {
+    border: 2px solid #FCA311;
+
 }
 
 @media (min-width: 768px) {
