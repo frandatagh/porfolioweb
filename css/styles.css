@@ -227,7 +227,7 @@ body {
 
 @font-face {
     font-family: 'contador-font';
-    src: url('/public/media/fonts/comic-font.TTF') format('truetype');
+    src: url('/media/fonts/comic-font.TTF') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
