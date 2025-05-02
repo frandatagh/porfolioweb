@@ -288,6 +288,10 @@ body {
     border: 2px solid white;
 }
 
+.h-descrip {
+    max-width: 450px;
+}
+
 
 
 /*contenedor acerca de mí-----------------------*/
