@@ -19,7 +19,7 @@ body {
     top: 0;
     left: 0;
     height: 100vh;
-    width: 50px;
+    width: 53px;
     background-color: #343a40;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@ body {
 
 .sidebar:hover,
 .sidebar.open {
-    width: 200px;
+    width: 220px;
 }
 
 .sidebar button {
@@ -362,14 +362,34 @@ body {
 
 /*estilos de tarjetas de proyectos*/
 .project-card {
-    width: 30%;
+    width: 90%;
+    height: 440px;
     background-color: #14213D;
-    border: 2px solid white;
+    border: 3px solid #343a40;
 }
 
 .project-card:hover {
-    border: 2px solid #FCA311;
+    border: 3px solid #FCA311;
 
+}
+
+.img-card-p {
+    border: 1px solid white;
+    width: 350px;
+    height: 250px;
+}
+
+#button-more-p {
+    background-color: #FCA311;
+    color: #000;
+    font-weight: bold;
+    border: 2px solid black;
+}
+
+#button-more-p:hover {
+    background-color: #e3a645;
+    color: #fff;
+    border: 2px solid white;
 }
 
 @media (min-width: 768px) {
