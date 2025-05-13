@@ -142,12 +142,31 @@
     
 
   </div>
-  <footer class="h-50">
+  <div id="mail-main">
+    <div class="m-5">
+      <div>
+        <h3 class="titulo-mail">¡Enviame un mail y pronto estaremos en contacto!</h3>
+      </div>
+      <div class="formulario">
+        <form id="contact-form" class="d-flex flex-column justify-items-center">
+          <span>Nombre</span>
+          <input type="text" name="from_name" placeholder="Tu nombre" required />
+          <span>Motivo</span>
+          <input type="text" name="subject" placeholder="Motivo del mensaje" required />
+          <span>Mensaje</span>
+          <textarea name="message" placeholder="Tu mensaje" required></textarea>
+          <button class="button-mail" type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer class="footer-main">
     <div>
       esto es un footer
     </div>
   </footer>
     
+  <script src="./js/contact.js"></script>
   <script type="module" src="./js/scripts.js"></script>
   <script src="./js/bootstrap.min.js"></script>
   <script src="./js/bootstrap.bundle.min.js"></script>
