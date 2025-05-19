@@ -488,8 +488,11 @@ body {
 
 /*estilos de footer*/
 .footer-main {
-    height: 500px;
     background-color: rgb(34, 34, 34);
+}
+
+.first-foot {
+    padding-left: 60px;
 }
 
 /* En pantallas pequeñas, limita la altura al 40% */
