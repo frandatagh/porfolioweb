@@ -21,7 +21,6 @@ body {
 body {
     background-color: rgb(34, 34, 34);
     color: white;
-    padding-top: 30px;
     padding-left: 60px;
 }
 
@@ -301,6 +300,9 @@ body {
 
 .h-descrip {
     max-width: 450px;
+    min-width: 100px;
+    margin: auto;
+
 }
 
 
@@ -318,8 +320,18 @@ body {
 
 #aboutme {
     width: 100%;
-    margin: auto;
-    min-width: 0px;
+    align-items: center;
+}
+
+.titulo-me {
+    text-align: left;
+    /* Asegura que el texto esté alineado a la izquierda */
+    width: 100%;
+    max-width: 950px;
+    padding-bottom: 20px;
+    /* Ocupa todo el ancho disponible */
+    justify-content: flex-start !important;
+    /* Para elementos flex */
 }
 
 .acercademi {
@@ -327,6 +339,10 @@ body {
     padding-top: 30px;
     padding-bottom: 70px;
     background-color: #142135;
+}
+
+.text-acerca {
+    max-width: 950px;
 }
 
 
@@ -361,34 +377,57 @@ body {
 
 /*estilos de tarjetas de proyectos*/
 .project-card {
-    width: 80%;
-    height: 440px;
+    width: 300px;
+    height: 400px;
+    margin: auto;
     background-color: #14213D;
-    border: 3px solid #343a40;
+    border: 5px solid #343a40;
 }
 
 .project-card:hover {
-    border: 3px solid #FCA311;
-
+    border: 5px solid #FCA311;
+    transition: ease-in-out 0.3s;
 }
 
 .img-card-p {
-    border: 1px solid white;
-    width: 350px;
-    height: 250px;
+    border: 3px solid #343a40;
+    width: 255px;
+    height: 220px;
+}
+
+.button-sabermas {
+    align-self: center;
+    background-color: rgb(34, 34, 34);
+    color: #343a40;
+    font-weight: 500;
+    border: 3px solid #343a40;
+    border-radius: 10px;
+}
+
+
+.project-card:hover .button-sabermas {
+    background-color: #FCA311;
+    color: #000;
+    border: 3px solid black;
+    transition: ease-in-out 0.3s;
+}
+
+.button-sabermas:hover {
+    color: white !important;
+    border: 3px solid white !important;
 }
 
 #button-more-p {
     background-color: #FCA311;
     color: #000;
     font-weight: bold;
-    border: 2px solid black;
+    border: 3px solid black;
 }
 
 #button-more-p:hover {
     background-color: #e3a645;
     color: #fff;
-    border: 2px solid white;
+    border: 3px solid white;
 }
 
 /*estilos del formulario de envio de mail*/
@@ -510,6 +549,11 @@ body {
 
     .panel-control {
         display: none;
+    }
+
+    .h-descrip {
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 
