@@ -495,6 +495,11 @@ body {
     padding-left: 60px;
 }
 
+.second-foot {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
 /* En pantallas pequeñas, limita la altura al 40% */
 @media (max-width: 767.98px) {
     body {
