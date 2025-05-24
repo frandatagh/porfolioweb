@@ -511,6 +511,12 @@ body {
     padding-right: 60px;
 }
 
+.derechos-part {
+    font-size: 0.8rem;
+    padding-left: 20px;
+    color: #676d73;
+}
+
 
 
 /* En pantallas pequeñas, limita la altura al 40% */
