@@ -316,7 +316,50 @@ body {
 
 }
 
+/*contendor primera encuesta*/
+.first-question {
+    position: relative;
+    background-color: #FCA311;
+    width: 80%;
+    height: 200px;
+    margin: auto;
+}
 
+.survey-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.options button {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.7rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.options button:hover {
+    background: #e9ecef;
+}
+
+.chart-container {
+    margin-top: 2rem;
+    height: 300px;
+}
+
+.note {
+    font-size: 0.8rem;
+    color: #6c757d;
+    text-align: center;
+}
 
 /*contenedor acerca de mí-----------------------*/
 .container-me {
