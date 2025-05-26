@@ -109,23 +109,32 @@
     </div>
   </div>
   <div class="first-question">
-    <div class="survey-container">
-      <h3>📊 Encuesta rápida: IA en tu día a día</h3>
-      <p>¿Qué tanto usas tecnología IA para tus tareas diarias o trabajo?</p>
+    <h4 class="question-welcome"></h4>
+    <div class="ia-survey d-flex row">
+      <h3 class="fs-6 d-flex justify-content-center">¿Qué tanto usas IA en tu día a día?</h3>
       
-      <div class="options">
-        <button onclick="vote(1)">1. Realmente poco uso</button>
-        <button onclick="vote(2)">2. Mucho uso</button>
-        <button onclick="vote(3)">3. Nada, aún no uso esa tecnología</button>
-        <button onclick="vote(4)">4. Menos de lo que quisiera</button>
-        <button onclick="vote(5)">5. Dependo de la IA</button>
+      <div class="survey-options">
+        <div class="option" data-value="1" onclick="vote(1)">
+          <span class="label">1. Realmente poco uso</span>
+          <span class="percentage">0%</span>
+        </div>
+        <div class="option" data-value="2" onclick="vote(2)">
+          <span class="label">2. Mucho uso</span>
+          <span class="percentage">0%</span>
+        </div>
+        <div class="option" data-value="3" onclick="vote(3)">
+          <span class="label">3. Nada, aún no uso IA</span>
+          <span class="percentage">0%</span>
+        </div>
+        <div class="option" data-value="4" onclick="vote(4)">
+          <span class="label">4. Menos de lo que quisiera</span>
+          <span class="percentage">0%</span>
+        </div>
+        <div class="option" data-value="5" onclick="vote(5)">
+          <span class="label">5. Dependo de la IA</span>
+          <span class="percentage">0%</span>
+        </div>
       </div>
-      
-      <div class="chart-container">
-        <canvas id="surveyChart"></canvas>
-      </div>
-      
-      <p class="note">* Resultados en tiempo real. ¡Gracias por participar!</p>
     </div>
   </div>
   <div class="acercademi">

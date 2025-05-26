@@ -321,45 +321,46 @@ body {
     position: relative;
     background-color: #FCA311;
     width: 80%;
-    height: 200px;
+    height: 120px;
     margin: auto;
 }
 
-.survey-container {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    background: #f8f9fa;
+.ia-survey {
+    background-color: #292b2e;
+    max-width: 500px;
+    margin: auto;
+    font-family: 'Arial', sans-serif;
+    border: 1px solid white;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.options button {
-    display: block;
-    width: 100%;
-    margin: 0.5rem 0;
-    padding: 0.7rem;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s;
+.survey-options {
+    margin: 10px 0;
 }
 
-.options button:hover {
-    background: #e9ecef;
-}
-
-.chart-container {
-    margin-top: 2rem;
-    height: 300px;
-}
-
-.note {
+.option {
+    padding: 2px;
+    margin: 2px 0;
     font-size: 0.8rem;
-    color: #6c757d;
-    text-align: center;
+    background: #292b2e;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s;
+    border: 1px solid #e1e4e8;
 }
+
+.option:hover {
+    background: #2569ce;
+    transform: translateX(5px);
+}
+
+.percentage {
+    font-weight: bold;
+    color: #2f8127;
+}
+
 
 /*contenedor acerca de mí-----------------------*/
 .container-me {
