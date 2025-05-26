@@ -319,10 +319,31 @@ body {
 /*contendor primera encuesta*/
 .first-question {
     position: relative;
-    background-color: #FCA311;
     width: 80%;
     height: 120px;
     margin: auto;
+}
+
+.question-welcome {
+    font-family: 'contador-font', sans-serif;
+    position: absolute;
+    text-align: center;
+    top: -80px;
+    right: 150px;
+}
+
+.doyou {
+    font-size: 1rem;
+    margin-bottom: -5px;
+}
+
+.more-clicks {
+    font-size: 1.3rem;
+}
+
+.question-welcome i {
+    transform: rotate(-45deg) translateY(-15px);
+    margin-left: -100px;
 }
 
 .ia-survey {
@@ -636,6 +657,15 @@ body {
     .h-descrip {
         padding-left: 30px;
         padding-right: 30px;
+    }
+
+    .question-welcome {
+        top: -110px;
+        right: -35px;
+    }
+
+    .question-welcome i {
+        margin-left: 0px;
     }
 }
 
