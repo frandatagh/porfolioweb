@@ -112,7 +112,7 @@
     <div class="question-welcome">
       <h4 class="doyou">do you want</h4>
       <h3 class="more-clicks">more clicks?</h3>
-      <i class="fa-solid fa-left-long"></i>
+      <i class="fa-solid fa-arrow-left-long"></i>
     </div>
     <div class="ia-survey d-flex row">
       <h3 class="fs-6 d-flex justify-content-center">¿Qué tanto usas IA en tu día a día?</h3>
@@ -121,22 +121,27 @@
         <div class="option" data-value="1" onclick="vote(1)">
           <span class="label">1. Realmente poco uso</span>
           <span class="percentage">0%</span>
+          <div class="bar"></div>
         </div>
         <div class="option" data-value="2" onclick="vote(2)">
           <span class="label">2. Mucho uso</span>
           <span class="percentage">0%</span>
+          <div class="bar"></div>
         </div>
         <div class="option" data-value="3" onclick="vote(3)">
           <span class="label">3. Nada, aún no uso IA</span>
           <span class="percentage">0%</span>
+          <div class="bar"></div>
         </div>
         <div class="option" data-value="4" onclick="vote(4)">
           <span class="label">4. Menos de lo que quisiera</span>
           <span class="percentage">0%</span>
+          <div class="bar"></div>
         </div>
         <div class="option" data-value="5" onclick="vote(5)">
           <span class="label">5. Dependo de la IA</span>
           <span class="percentage">0%</span>
+          <div class="bar"></div>
         </div>
       </div>
     </div>
@@ -298,7 +303,12 @@
     </div>
   </footer>
     
-  <script src="./js/survey.js"></script>
+  <script type="module">
+    import { vote, showResults } from './js/encuesta.js';
+  
+    window.vote = vote;
+    showResults();
+  </script>
   <script src="./js/contact.js"></script>
   <script type="module" src="./js/scripts.js"></script>
   <script src="./js/bootstrap.min.js"></script>

@@ -352,8 +352,9 @@ body {
     max-width: 500px;
     margin: auto;
     font-family: 'Arial', sans-serif;
-    border: 1px solid white;
+    border: 2px solid white;
     border-radius: 10px;
+    padding-top: 15px;
 }
 
 .survey-options {
@@ -361,16 +362,33 @@ body {
 }
 
 .option {
+    position: relative;
+    margin-bottom: 3px;
     padding: 2px;
-    margin: 2px 0;
-    font-size: 0.8rem;
-    background: #292b2e;
+    border: 1px solid white;
+    background-color: #292b2e;
     border-radius: 8px;
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    transition: all 0.3s;
-    border: 1px solid #e1e4e8;
+    overflow: hidden;
+}
+
+.option .bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0%;
+    background-color: #007bff;
+    z-index: 0;
+    transition: width 0.4s ease;
+    border-radius: 6px;
+}
+
+.option .label,
+.option .percentage {
+    position: relative;
+    z-index: 1;
+    color: white;
 }
 
 .option:hover {
@@ -661,12 +679,12 @@ body {
     }
 
     .question-welcome {
-        top: -110px;
+        top: -70px;
         right: -35px;
     }
 
     .question-welcome i {
-        margin-left: 0px;
+        margin-left: 10px;
     }
 }
 
