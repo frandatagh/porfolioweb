@@ -317,6 +317,13 @@ body {
 }
 
 /*contendor primera encuesta*/
+.section-ask {
+    width: 100%;
+    height: 250px;
+    padding-top: 20px;
+    background-color: #181818;
+}
+
 .first-question {
     position: relative;
     width: 80%;
@@ -363,8 +370,7 @@ body {
 
 .option {
     position: relative;
-    margin-bottom: 3px;
-    padding: 2px;
+    margin-bottom: 2px;
     border: 1px solid white;
     background-color: #292b2e;
     border-radius: 8px;
@@ -467,7 +473,12 @@ body {
     }
 }
 
-
+/*seccion de analisi y encuestas*/
+.section-analysis {
+    width: 100%;
+    height: 500px;
+    background-color: #14213D;
+}
 
 
 /*estilos de tarjetas de proyectos*/
