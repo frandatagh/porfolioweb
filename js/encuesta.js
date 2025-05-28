@@ -6,7 +6,7 @@ let hasVoted = false; // bandera para evitar votos múltiples en una sesión
 
 // Función para registrar el voto
 export const vote = async (value) => {
-  if (hasVoted) return; // evita votos múltiples en la misma sesión
+  if (hasVoted) return;
 
   try {
     const voteRef = ref(db, 'survey/' + value);
@@ -18,15 +18,24 @@ export const vote = async (value) => {
     });
 
     hasVoted = true;
-    showResults(); // muestra resultados después de votar
+    localStorage.setItem("hasVoted", "true");
+
+    // Agregar clase .voted a cada opción
+    document.querySelectorAll('.option').forEach(option => {
+      option.classList.add('voted');
+    });
+
+    showResults();
   } catch (error) {
     console.error("Error al registrar el voto:", error);
   }
 };
 
-// Función para mostrar los resultados después del voto
+
+// Función para mostrar resultados con animación y cambios visuales
 export const showResults = () => {
   const surveyRef = ref(db, 'survey');
+
   onValue(surveyRef, (snapshot) => {
     const data = snapshot.val() || {};
     const totalVotes = Object.values(data).reduce((a, b) => a + b, 0);
@@ -38,11 +47,32 @@ export const showResults = () => {
 
       const percentageEl = option.querySelector('.percentage');
       const barEl = option.querySelector('.bar');
+      const descriptionEl = option.querySelector('.description');
 
-      if (percentageEl) percentageEl.textContent = `${percent}%`;
-      if (barEl) barEl.style.width = `${percent}%`;
+      // Solo mostrar resultados si ya se votó
+      if (localStorage.getItem("hasVoted") === "true") {
+        // Mostrar y animar la barra
+        if (percentageEl) {
+          percentageEl.textContent = `${percent}%`;
+          percentageEl.style.display = 'inline';
+        }
+
+        if (barEl) {
+          barEl.style.transition = 'width 0.6s ease';
+          barEl.style.width = `${percent}%`;
+        }
+
+        // Ocultar descripción
+        if (descriptionEl) {
+          descriptionEl.style.display = 'none';
+        }
+      } else {
+        // Ocultar todo si aún no se ha votado
+        if (percentageEl) percentageEl.style.display = 'none';
+        if (barEl) barEl.style.width = '0%';
+      }
     });
   }, {
-    onlyOnce: true // solo una vez al mostrar resultados después de votar
+    onlyOnce: true
   });
 };
