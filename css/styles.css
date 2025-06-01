@@ -186,6 +186,19 @@ body {
     animation: clickBounce 0.6s ease-out;
 }
 
+.container {
+    background-image: url('../media/ChatGPT\ Image\ 1\ jun\ 2025\,\ 15_06_05.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .profile-container {
     position: relative;
     width: 200px;
@@ -336,7 +349,7 @@ body {
     font-family: 'contador-font', sans-serif;
     position: absolute;
     text-align: center;
-    top: -80px;
+    top: -110px;
     right: 150px;
 }
 
@@ -742,7 +755,7 @@ body {
     }
 
     .question-welcome {
-        top: -110px;
+        top: -150px;
         right: -35px;
     }
 
