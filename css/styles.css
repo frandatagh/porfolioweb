@@ -527,6 +527,11 @@ body {
     align-items: center;
 }
 
+.simbol-content {
+    text-align: center;
+    margin-top: 10px;
+}
+
 
 /*estilos de tarjetas de proyectos*/
 .project-card {
@@ -737,7 +742,7 @@ body {
     }
 
     .question-welcome {
-        top: -70px;
+        top: -110px;
         right: -35px;
     }
 
