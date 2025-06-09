@@ -187,7 +187,7 @@ body {
 }
 
 .container {
-    background-image: url('../media/ChatGPT\ Image\ 1\ jun\ 2025\,\ 15_06_05.png');
+    background-image: url('../media/fondo.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -276,7 +276,7 @@ body {
 
 .logo-titulo-github:hover {
     color: #000;
-    transition: 0, 6s;
+    transition: 0.6s;
 }
 
 .logo-titulo-download {
@@ -285,7 +285,7 @@ body {
 }
 
 .logo-titulo-download:hover {
-    transition: 0, 6s;
+    transition: 0.6s;
     color: white;
 }
 
@@ -295,7 +295,7 @@ body {
 }
 
 .logo-titulo-mail:hover {
-    transition: 0, 6s;
+    transition: 0.6s;
     color: rgb(60, 244, 198);
 }
 
@@ -305,7 +305,7 @@ body {
 }
 
 .logo-titulo-linked:hover {
-    transition: 0, 6s;
+    transition: 0.6s;
     color: rgb(66, 255, 104);
 }
 
@@ -332,9 +332,58 @@ body {
 /*contendor primera encuesta*/
 .section-ask {
     width: 100%;
-    height: 230px;
-    padding-top: 20px;
+    height: 250px;
+    padding-top: 30px;
     background-color: #181818;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.subtitulo-ask {
+    text-align: center;
+    width: 650px;
+    padding-bottom: 50px;
+    margin-left: 80px;
+    font-family: 'contador-font';
+}
+
+.subtitulo-ask h3 {
+    width: 300px;
+}
+
+.titulo-ask {
+    margin-bottom: -9px;
+}
+
+.subtitulo-ask h1 {
+    margin-top: -20px;
+    font-size: 3rem;
+}
+
+.click-fondo {
+    width: 50px;
+    height: 100px;
+    /* Altura del contenedor */
+    overflow: auto;
+    float: right;
+    margin-right: 130px;
+    margin-top: -15px;
+    /* Permite scroll interno */
+
+    /* Fondo decorativo PNG */
+    background-image: url('../media/details/click-pic.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 50px;
+    /* Tamaño del dibujo */
+    background-attachment: local;
+    /* Fondo se mueve con el scroll pero parece "fijo" dentro del contenedor */
+
+    /* Estilo opcional para mejor visualización */
+    border: 0px solid #ddd;
+    padding: 20px;
 }
 
 .first-question {
@@ -345,27 +394,7 @@ body {
     margin-top: -10px;
 }
 
-.question-welcome {
-    font-family: 'contador-font', sans-serif;
-    position: absolute;
-    text-align: center;
-    top: -110px;
-    right: 150px;
-}
 
-.doyou {
-    font-size: 1rem;
-    margin-bottom: -5px;
-}
-
-.more-clicks {
-    font-size: 1.3rem;
-}
-
-.question-welcome i {
-    transform: rotate(-45deg) translateY(-15px);
-    margin-left: -100px;
-}
 
 .ia-survey {
     background-color: #292b2e;
@@ -523,7 +552,7 @@ body {
     }
 }
 
-/*seccion de analisi y encuestas*/
+/*seccion de analisis y encuestas*/
 .section-analysis {
     width: 100%;
     height: 600px;
@@ -538,6 +567,18 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.first-panel {
+    background-color: yellow;
+    width: 100%;
+    height: 220px;
+}
+
+.second-panel {
+    background-color: blueviolet;
+    width: 100%;
+    height: 220px;
 }
 
 .simbol-content {
@@ -580,7 +621,7 @@ body {
     background-color: #FCA311;
     color: #000;
     border: 3px solid black;
-    transition: ease-in-out 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .button-sabermas:hover {
@@ -754,14 +795,40 @@ body {
         padding-right: 30px;
     }
 
-    .question-welcome {
-        top: -150px;
-        right: -35px;
+
+    .section-ask {
+        flex-direction: column;
+        height: 340px;
+        /* Para permitir que crezca según el contenido */
+        padding-left: 20px;
+        padding-right: 20px;
+
+        padding-top: 40px;
+        gap: 30px;
+        /* Espaciado entre los elementos */
+        align-items: center;
     }
 
-    .question-welcome i {
-        margin-left: 10px;
+    .subtitulo-ask {
+        width: 100%;
+        padding-bottom: 0px;
+        text-align: center;
     }
+
+    .subtitulo-ask h1 {
+        margin-top: -15px;
+        font-size: 2rem;
+    }
+
+    .click-fondo {
+        background-size: 40px;
+        margin-top: -10px;
+    }
+
+    .first-question {
+        width: 100%;
+    }
+
 }
 
 

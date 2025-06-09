@@ -110,12 +110,25 @@
   </div>
   
   <div class="section-ask">
-    <div class="first-question">
-      <div class="question-welcome">
-        <h4 class="doyou">do you want</h4>
-        <h3 class="more-clicks">more clicks?</h3>
-        <i class="fa-solid fa-arrow-left-long"></i>
+    <div class="subtitulo-ask">
+      <div class="click-fondo">
+        
       </div>
+      <div>
+        <h3 class="titulo-ask">
+          play and answer with
+        </h3>
+        <h3>
+          the click collector!
+        </h3>
+        <h1>
+          +10.000 clicks
+        </h1>
+      </div>
+      
+    </div>
+    <div class="first-question">
+
       <div class="ia-survey d-flex row">
         <h3 class="fs-6 d-flex justify-content-center">¿Qué tanto usas IA en tu día a día?</h3>
         
@@ -172,8 +185,76 @@
   <div class="section-analysis">
     <div class="analysis">
       <h3>Analisis y Estadística</h3>
-      <div class="first-panel"></div>
-      <div class="second-panel"></div>
+      <div class="first-panel">
+        <div class="ia-survey d-flex row">
+          <h3 class="fs-6 d-flex justify-content-center">¿Qué tanto usas IA en tu día a día?</h3>
+          
+          <div class="survey-options">
+            <div class="option" data-value="1" onclick="vote(1)">
+              <span class="label">Realmente poco uso</span>
+              <div class="bar-container">
+                <div class="bar" style="width: 0%"></div>
+              </div>
+              <span class="percentage"></span>
+            </div>
+            <div class="option" data-value="2" onclick="vote(2)">
+              <span class="label">Mucho uso</span>
+              <div class="bar-container">
+                <div class="bar" style="width: 0%"></div>
+              </div>
+              <span class="percentage"></span>
+            </div>
+            <div class="option" data-value="3" onclick="vote(3)">
+              <span class="label">Nada, aún no uso IA</span>
+              <div class="bar-container">
+                <div class="bar" style="width: 0%"></div>
+              </div>
+              <span class="percentage"></span>
+            </div>
+            <div class="simbol-content">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px"  viewBox="0 0 24 24">
+                <path fill="currentColor" d="M4 9h4v11H4zm12 4h4v7h-4zm-6-9h4v16h-4z"/>
+              </svg>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="second-panel">
+        <div class="ia-survey d-flex row">
+          <h3 class="fs-6 d-flex justify-content-center">¿Qué tanto usas IA en tu día a día?</h3>
+          
+          <div class="survey-options">
+            <div class="option" data-value="1" onclick="vote(1)">
+              <span class="label">Realmente poco uso</span>
+              <div class="bar-container">
+                <div class="bar" style="width: 0%"></div>
+              </div>
+              <span class="percentage"></span>
+            </div>
+            <div class="option" data-value="2" onclick="vote(2)">
+              <span class="label">Mucho uso</span>
+              <div class="bar-container">
+                <div class="bar" style="width: 0%"></div>
+              </div>
+              <span class="percentage"></span>
+            </div>
+            <div class="option" data-value="3" onclick="vote(3)">
+              <span class="label">Nada, aún no uso IA</span>
+              <div class="bar-container">
+                <div class="bar" style="width: 0%"></div>
+              </div>
+              <span class="percentage"></span>
+            </div>
+            <div class="simbol-content">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px"  viewBox="0 0 24 24">
+                <path fill="currentColor" d="M4 9h4v11H4zm12 4h4v7h-4zm-6-9h4v16h-4z"/>
+              </svg>
+            </div>
+            
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="d-flex pt-5 justify-content-center align-items-center flex-column">
@@ -242,7 +323,7 @@
     </div>
   </div>
   <footer class="footer-main">
-    <div class="container">
+    <div class="container-footer">
       <div class="row mt-5 pt-3">
         <!-- Primera columna: Navegación -->
         <div class="d-flex column col-md-6 mb-4 mb-md-0 first-foot">
