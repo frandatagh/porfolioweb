@@ -337,54 +337,52 @@ body {
     background-color: #181818;
     display: flex;
     align-items: center;
-    padding-left: 80px;
-    padding-right: 80px;
+    justify-content: stretch;
 }
 
 .subtitulo-ask {
-    text-align: center;
+    position: relative;
     width: 650px;
     padding-bottom: 50px;
     margin-left: 80px;
     font-family: 'contador-font';
+    color: white;
 }
 
-.subtitulo-ask h3 {
-    width: 300px;
+/* Nueva fila horizontal con texto + ícono */
+.fila-superior {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
 }
 
-.titulo-ask {
-    margin-bottom: -9px;
+/* Texto alineado a la izquierda */
+.click-texto h3 {
+    margin: 0;
+    line-height: 1.2;
+    font-size: 1.6rem;
 }
 
-.subtitulo-ask h1 {
-    margin-top: -20px;
-    font-size: 3rem;
-}
-
+/* Ícono alineado a la derecha */
 .click-fondo {
-    width: 50px;
-    height: 100px;
-    /* Altura del contenedor */
-    overflow: auto;
-    float: right;
-    margin-right: 130px;
-    margin-top: -15px;
-    /* Permite scroll interno */
-
-    /* Fondo decorativo PNG */
+    width: 45px;
+    height: 45px;
     background-image: url('../media/details/click-pic.png');
     background-repeat: no-repeat;
-    background-position: top;
-    background-size: 50px;
-    /* Tamaño del dibujo */
-    background-attachment: local;
-    /* Fondo se mueve con el scroll pero parece "fijo" dentro del contenedor */
-
-    /* Estilo opcional para mejor visualización */
-    border: 0px solid #ddd;
-    padding: 20px;
+    background-position: center;
+    background-size: contain;
+    margin-left: 15px;
+    transform: translateY(-10px);
+    /*<- Eleva el icono sin romper el flujo */
 }
+
+/* Número grande debajo */
+.click-count {
+    margin-top: -5px;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
 
 .first-question {
     position: relative;
