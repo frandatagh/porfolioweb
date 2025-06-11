@@ -333,27 +333,27 @@ body {
 .section-ask {
     width: 100%;
     height: 250px;
-    padding-top: 30px;
+
     background-color: #181818;
     display: flex;
     align-items: center;
-    justify-content: stretch;
+    justify-content: center;
 }
 
 .subtitulo-ask {
     position: relative;
     width: 650px;
-    padding-bottom: 50px;
-    margin-left: 80px;
     font-family: 'contador-font';
     color: white;
+    padding-left: 10%;
 }
 
 /* Nueva fila horizontal con texto + ícono */
 .fila-superior {
     display: flex;
     align-items: center;
-    justify-content: stretch;
+    justify-content: center;
+    margin: auto;
 }
 
 /* Texto alineado a la izquierda */
@@ -378,18 +378,20 @@ body {
 
 /* Número grande debajo */
 .click-count {
-    margin-top: -5px;
     font-size: 3rem;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 
 
 .first-question {
     position: relative;
+    padding: 50px;
     width: 80%;
-    height: 120px;
-    margin: auto;
-    margin-top: -10px;
+    margin-right: 40px;
 }
 
 
@@ -796,26 +798,26 @@ body {
 
     .section-ask {
         flex-direction: column;
-        height: 340px;
+        height: 420px;
         /* Para permitir que crezca según el contenido */
-        padding-left: 20px;
-        padding-right: 20px;
-
-        padding-top: 40px;
-        gap: 30px;
-        /* Espaciado entre los elementos */
-        align-items: center;
+        padding-left: 50px;
+        padding-right: 50px;
     }
 
     .subtitulo-ask {
         width: 100%;
         padding-bottom: 0px;
         text-align: center;
+        margin: auto;
+        padding-left: 0px;
     }
 
-    .subtitulo-ask h1 {
-        margin-top: -15px;
-        font-size: 2rem;
+
+    .click-count {
+        margin-top: 5px;
+        justify-content: center;
+        font-size: 3rem;
+        font-weight: bold;
     }
 
     .click-fondo {
@@ -825,6 +827,9 @@ body {
 
     .first-question {
         width: 100%;
+        padding: 0px;
+        padding-bottom: 40px;
+        margin-right: 0px;
     }
 
 }
