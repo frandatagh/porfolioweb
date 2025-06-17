@@ -185,21 +185,21 @@
           <h3 class="fs-6 d-flex justify-content-center">¿Cuál de estas tecnologías impactará más nuestro futuro?</h3>
           
           <div class="survey-options-analysis">
-            <div class="option-analysis" data-value="1" onclick="vote(1)">
+            <div class="option-analysis" data-value="biotech" onclick="voteAnalysis('question-1', 'biotech')">
               <span class="label-analysis">Biotech</span>
               <div class="bar-container-analysis">
                 <div class="bar-analysis" style="width: 0%"></div>
               </div>
               <span class="percentage-analysis"></span>
             </div>
-            <div class="option-analysis" data-value="2" onclick="vote(2)">
+            <div class="option-analysis" data-value="blockchain" onclick="voteAnalysis('question-1', 'blockchain')">
               <span class="label-analysis">Blockchain</span>
               <div class="bar-container-analysis">
                 <div class="bar-analysis" style="width: 0%"></div>
               </div>
               <span class="percentage-analysis"></span>
             </div>
-            <div class="option-analysis" data-value="3" onclick="vote(3)">
+            <div class="option-analysis" data-value="realidad_extendida" onclick="voteAnalysis('question-1', 'realidad_extendida')">
               <span class="label-analysis">Realidad Extendida</span>
               <div class="bar-container-analysis">
                 <div class="bar-analysis" style="width: 0%"></div>
@@ -219,21 +219,21 @@
           <h3 class="fs-6 d-flex justify-content-center">¿Qué red social te parece la más útil hoy?</h3>
           
           <div class="survey-options-analysis">
-            <div class="option-analysis" data-value="1" onclick="vote(1)">
+            <div class="option-analysis" data-value="instagram" onclick="voteAnalysis('question-2', 'instagram')">
               <span class="label-analysis">Instagram</span>
               <div class="bar-container-analysis">
                 <div class="bar-analysis" style="width: 0%"></div>
               </div>
               <span class="percentage-analysis"></span>
             </div>
-            <div class="option-analysis" data-value="2" onclick="vote(2)">
+            <div class="option-analysis" data-value="twitter" onclick="voteAnalysis('question-2', 'twitter')">
               <span class="label-analysis">X / Twitter</span>
               <div class="bar-container-analysis">
                 <div class="bar-analysis" style="width: 0%"></div>
               </div>
               <span class="percentage-analysis"></span>
             </div>
-            <div class="option-analysis" data-value="3" onclick="vote(3)">
+            <div class="option-analysis" data-value="facebook" onclick="voteAnalysis('question-2', 'facebook')">
               <span class="label-analysis">Facebook</span>
               <div class="bar-container-analysis">
                 <div class="bar-analysis" style="width: 0%"></div>
@@ -253,28 +253,28 @@
           <h3 class="fs-6 d-flex justify-content-center">¿Qué pensás cuando escuchás "Big Data"?</h3>
           
           <div class="survey-options-analysis">
-            <div class="option-analysis" data-value="1" onclick="vote(1)">
+            <div class="option-analysis" data-value="empresas" onclick="voteAnalysis('question-3', 'empresas')">
               <span class="label-analysis">Algo complejo de las empresas</span>
               <div class="bar-container-analysis">
                 <div class="bar-analysis" style="width: 0%"></div>
               </div>
               <span class="percentage-analysis"></span>
             </div>
-            <div class="option-analysis" data-value="2" onclick="vote(2)">
+            <div class="option-analysis" data-value="datos_dificiles" onclick="voteAnalysis('question-3', 'datos_dificiles')">
               <span class="label-analysis">Muchos datos difíciles de entender</span>
               <div class="bar-container-analysis">
                 <div class="bar-analysis" style="width: 0%"></div>
               </div>
               <span class="percentage-analysis"></span>
             </div>
-            <div class="option-analysis" data-value="3" onclick="vote(3)">
+            <div class="option-analysis" data-value="patrones_ocultos" onclick="voteAnalysis('question-3', 'patrones_ocultos')">
               <span class="label-analysis">Información que revela patrones ocultos</span>
               <div class="bar-container-analysis">
                 <div class="bar-analysis" style="width: 0%"></div>
               </div>
               <span class="percentage-analysis"></span>
             </div>
-            <div class="option-analysis" data-value="4" onclick="vote(4)">
+            <div class="option-analysis" data-value="decisiones_inteligentes" onclick="voteAnalysis('question-3', 'decisiones_inteligentes')">
               <span class="label-analysis">El futuro de las decisiones inteligentes</span>
               <div class="bar-container-analysis">
                 <div class="bar-analysis" style="width: 0%"></div>
@@ -434,6 +434,7 @@
     window.voteAnalysis = voteAnalysis;
     window.showAnalysisResults = showAnalysisResults;
   </script>
+  <script type="module" src="./js/encuestas-analisis.js"></script>
   <script src="./js/contact.js"></script>
   <script type="module" src="./js/scripts.js"></script>
   <script src="./js/bootstrap.min.js"></script>
