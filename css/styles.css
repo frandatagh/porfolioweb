@@ -241,7 +241,7 @@ body {
     font-size: xx-large;
 }
 
-/* 🔄 Nueva animación sutil tipo “señalando” */
+/* Nueva animación sutil tipo “señalando” */
 .pointer-hint {
     animation: hintMove 1.5s ease-in-out infinite;
 }
@@ -555,7 +555,7 @@ body {
 /*seccion de analisis y encuestas*/
 .section-analysis {
     width: 100%;
-    height: 600px;
+    height: 900px;
     background-color: #14213D;
 }
 
@@ -863,5 +863,103 @@ body {
 
     .custom-subtitle {
         font-size: 2rem;
+    }
+}
+
+/* Estilos para el carrusel de encuestas */
+.survey-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.survey-card {
+    background: #292b2e;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.survey-title {
+    color: #FCA311;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.results-card {
+    background: linear-gradient(135deg, #14213D 0%, #000000 100%);
+}
+
+.results-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.results-summary {
+    color: white;
+}
+
+.more-surveys {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-control.prev {
+    left: 20px;
+}
+
+.carousel-control.next {
+    right: 20px;
+}
+
+/* Estilos para la vista móvil */
+@media (max-width: 768px) {
+    .survey-card {
+        padding: 1.5rem;
+    }
+
+    .survey-title {
+        font-size: 1.2rem;
+    }
+
+    .carousel-control {
+        padding: 8px;
     }
 }
