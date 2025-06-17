@@ -178,119 +178,112 @@
   </div>  
   <div class="section-analysis">
     <div class="analysis">
-      <h3>Analisis y Estadística</h3>
-      
-      <div class="first-panel">
-        <div class="ia-survey-analysis d-flex row" id="question-1">
-          <h3 class="fs-6 d-flex justify-content-center">¿Cuál de estas tecnologías impactará más nuestro futuro?</h3>
-          
-          <div class="survey-options-analysis">
-            <div class="option-analysis" data-value="biotech" onclick="voteAnalysis('question-1', 'biotech')">
-              <span class="label-analysis">Biotech</span>
-              <div class="bar-container-analysis">
-                <div class="bar-analysis" style="width: 0%"></div>
+      <h3>Análisis y Estadística</h3>
+  
+      <div class="slider-analysis">
+        <!-- Encuesta 1 -->
+        <div class="slide active">
+          <div class="ia-survey-analysis d-flex row" id="question-1">
+            <h3 class="fs-6 d-flex justify-content-center">¿Cuál de estas tecnologías impactará más nuestro futuro?</h3>
+            <div class="survey-options-analysis">
+              <div class="option-analysis" data-value="biotech">
+                <span class="label-analysis">Biotech</span>
+                <div class="bar-container-analysis">
+                  <div class="bar-analysis" style="width: 0%"></div>
+                </div>
+                <span class="percentage-analysis"></span>
               </div>
-              <span class="percentage-analysis"></span>
-            </div>
-            <div class="option-analysis" data-value="blockchain" onclick="voteAnalysis('question-1', 'blockchain')">
-              <span class="label-analysis">Blockchain</span>
-              <div class="bar-container-analysis">
-                <div class="bar-analysis" style="width: 0%"></div>
+              <div class="option-analysis" data-value="blockchain">
+                <span class="label-analysis">Blockchain</span>
+                <div class="bar-container-analysis">
+                  <div class="bar-analysis" style="width: 0%"></div>
+                </div>
+                <span class="percentage-analysis"></span>
               </div>
-              <span class="percentage-analysis"></span>
-            </div>
-            <div class="option-analysis" data-value="realidad_extendida" onclick="voteAnalysis('question-1', 'realidad_extendida')">
-              <span class="label-analysis">Realidad Extendida</span>
-              <div class="bar-container-analysis">
-                <div class="bar-analysis" style="width: 0%"></div>
+              <div class="option-analysis" data-value="realidad_extendida">
+                <span class="label-analysis">Realidad Extendida</span>
+                <div class="bar-container-analysis">
+                  <div class="bar-analysis" style="width: 0%"></div>
+                </div>
+                <span class="percentage-analysis"></span>
               </div>
-              <span class="percentage-analysis"></span>
             </div>
-            <div class="simbol-content">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20px"  viewBox="0 0 24 24">
-                <path fill="currentColor" d="M4 9h4v11H4zm12 4h4v7h-4zm-6-9h4v16h-4z"/>
-              </svg>
+          </div>
+        </div>
+  
+        <!-- Encuesta 2 -->
+        <div class="slide">
+          <div class="ia-survey-analysis d-flex row" id="question-2">
+            <h3 class="fs-6 d-flex justify-content-center">¿Qué red social te parece la más útil hoy?</h3>
+            <div class="survey-options-analysis">
+              <div class="option-analysis" data-value="instagram">
+                <span class="label-analysis">Instagram</span>
+                <div class="bar-container-analysis">
+                  <div class="bar-analysis" style="width: 0%"></div>
+                </div>
+                <span class="percentage-analysis"></span>
+              </div>
+              <div class="option-analysis" data-value="twitter">
+                <span class="label-analysis">X / Twitter</span>
+                <div class="bar-container-analysis">
+                  <div class="bar-analysis" style="width: 0%"></div>
+                </div>
+                <span class="percentage-analysis"></span>
+              </div>
+              <div class="option-analysis" data-value="facebook">
+                <span class="label-analysis">Facebook</span>
+                <div class="bar-container-analysis">
+                  <div class="bar-analysis" style="width: 0%"></div>
+                </div>
+                <span class="percentage-analysis"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Encuesta 3 -->
+        <div class="slide">
+          <div class="ia-survey-analysis d-flex row" id="question-3">
+            <h3 class="fs-6 d-flex justify-content-center">¿Qué pensás cuando escuchás “Big Data”?</h3>
+            <div class="survey-options-analysis">
+              <div class="option-analysis" data-value="empresas">
+                <span class="label-analysis">Algo complejo de las empresas</span>
+                <div class="bar-container-analysis">
+                  <div class="bar-analysis" style="width: 0%"></div>
+                </div>
+                <span class="percentage-analysis"></span>
+              </div>
+              <div class="option-analysis" data-value="datos_dificiles">
+                <span class="label-analysis">Muchos datos difíciles de entender</span>
+                <div class="bar-container-analysis">
+                  <div class="bar-analysis" style="width: 0%"></div>
+                </div>
+                <span class="percentage-analysis"></span>
+              </div>
+              <div class="option-analysis" data-value="patrones_ocultos">
+                <span class="label-analysis">Información que revela patrones ocultos</span>
+                <div class="bar-container-analysis">
+                  <div class="bar-analysis" style="width: 0%"></div>
+                </div>
+                <span class="percentage-analysis"></span>
+              </div>
+              <div class="option-analysis" data-value="decisiones_inteligentes">
+                <span class="label-analysis">El futuro de las decisiones inteligentes</span>
+                <div class="bar-container-analysis">
+                  <div class="bar-analysis" style="width: 0%"></div>
+                </div>
+                <span class="percentage-analysis"></span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="second-panel">
-        <div class="ia-survey-analysis d-flex row" id="question-2">
-          <h3 class="fs-6 d-flex justify-content-center">¿Qué red social te parece la más útil hoy?</h3>
-          
-          <div class="survey-options-analysis">
-            <div class="option-analysis" data-value="instagram" onclick="voteAnalysis('question-2', 'instagram')">
-              <span class="label-analysis">Instagram</span>
-              <div class="bar-container-analysis">
-                <div class="bar-analysis" style="width: 0%"></div>
-              </div>
-              <span class="percentage-analysis"></span>
-            </div>
-            <div class="option-analysis" data-value="twitter" onclick="voteAnalysis('question-2', 'twitter')">
-              <span class="label-analysis">X / Twitter</span>
-              <div class="bar-container-analysis">
-                <div class="bar-analysis" style="width: 0%"></div>
-              </div>
-              <span class="percentage-analysis"></span>
-            </div>
-            <div class="option-analysis" data-value="facebook" onclick="voteAnalysis('question-2', 'facebook')">
-              <span class="label-analysis">Facebook</span>
-              <div class="bar-container-analysis">
-                <div class="bar-analysis" style="width: 0%"></div>
-              </div>
-              <span class="percentage-analysis"></span>
-            </div>
-            <div class="simbol-content">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20px"  viewBox="0 0 24 24">
-                <path fill="currentColor" d="M4 9h4v11H4zm12 4h4v7h-4zm-6-9h4v16h-4z"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="third-panel">
-        <div class="ia-survey-analysis d-flex row" id="question-3">
-          <h3 class="fs-6 d-flex justify-content-center">¿Qué pensás cuando escuchás "Big Data"?</h3>
-          
-          <div class="survey-options-analysis">
-            <div class="option-analysis" data-value="empresas" onclick="voteAnalysis('question-3', 'empresas')">
-              <span class="label-analysis">Algo complejo de las empresas</span>
-              <div class="bar-container-analysis">
-                <div class="bar-analysis" style="width: 0%"></div>
-              </div>
-              <span class="percentage-analysis"></span>
-            </div>
-            <div class="option-analysis" data-value="datos_dificiles" onclick="voteAnalysis('question-3', 'datos_dificiles')">
-              <span class="label-analysis">Muchos datos difíciles de entender</span>
-              <div class="bar-container-analysis">
-                <div class="bar-analysis" style="width: 0%"></div>
-              </div>
-              <span class="percentage-analysis"></span>
-            </div>
-            <div class="option-analysis" data-value="patrones_ocultos" onclick="voteAnalysis('question-3', 'patrones_ocultos')">
-              <span class="label-analysis">Información que revela patrones ocultos</span>
-              <div class="bar-container-analysis">
-                <div class="bar-analysis" style="width: 0%"></div>
-              </div>
-              <span class="percentage-analysis"></span>
-            </div>
-            <div class="option-analysis" data-value="decisiones_inteligentes" onclick="voteAnalysis('question-3', 'decisiones_inteligentes')">
-              <span class="label-analysis">El futuro de las decisiones inteligentes</span>
-              <div class="bar-container-analysis">
-                <div class="bar-analysis" style="width: 0%"></div>
-              </div>
-              <span class="percentage-analysis"></span>
-            </div>
-            <div class="simbol-content">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20px"  viewBox="0 0 24 24">
-                <path fill="currentColor" d="M4 9h4v11H4zm12 4h4v7h-4zm-6-9h4v16h-4z"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
+  
+      <!-- Navegación por puntos -->
+      <div class="slider-pagination"></div>
     </div>
   </div>
+  
   <div class="d-flex pt-5 justify-content-center align-items-center flex-column">
     <h3 class="element-showup mb-5 pb-4">Mainprojects</h3>
     <div class="row justify-content-center">

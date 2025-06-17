@@ -681,6 +681,51 @@ body {
     opacity: 1;
 }
 
+.option-analysis.selected .label-analysis {
+    color: #28a745; /* verde éxito */
+    font-weight: bold;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+  }
+  
+  .option-analysis.selected {
+    background-color: rgba(40, 167, 69, 0.1);
+    border-color: #28a745;
+  }
+
+.slider-analysis {
+    position: relative;
+    overflow: hidden;
+  }
+  .slide {
+    display: none;
+    animation: fadein 0.4s ease;
+  }
+  .slide.active {
+    display: block;
+  }
+  @keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .slider-pagination {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .slider-pagination span {
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0 5px;
+    opacity: 0.3;
+  }
+  .slider-pagination .active {
+    opacity: 1;
+  }
+  .bar-analysis {
+    transition: width 0.5s ease;
+  }
+  .percentage-analysis {
+    transition: opacity 0.3s ease;
+  }
 
 /*estilos de tarjetas de proyectos*/
 .project-card {
