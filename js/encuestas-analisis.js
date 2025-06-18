@@ -5,7 +5,7 @@ import {
     getDatabase,
     ref,
     onValue,
-    push,
+    update,
     get
 } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js";
 
@@ -25,155 +25,150 @@ console.log("[INIT] Initializing Firebase app");
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-// ✅ 4. Función para actualizar resultados
-function updateAnalysisResults(survey, data) {
-    console.log("[updateAnalysisResults] Updating results for survey:", survey.id);
-    const votos = Object.values(data).map(d => d.respuesta);
-    const total = votos.length;
-    console.log("[updateAnalysisResults] Total votes:", total);
+// ✅ 4. Función para mostrar resultados
+function showAnalysisResults() {
+  document.querySelectorAll('.ia-survey-analysis').forEach(survey => {
+    const id = survey.id;
+    const refSurvey = ref(db, `encuestas_analisis/${id}`);
+    const hasVoted = localStorage.getItem(`voted_${id}`) === 'true';
 
-    const opciones = survey.querySelectorAll('.option-analysis');
-    opciones.forEach(op => {
-        const valor = op.dataset.value;
-        const cantidad = votos.filter(v => v === valor).length;
-        const porcentaje = total > 0 ? Math.round((cantidad / total) * 100) : 0;
+    if (!hasVoted) return; // Si no se ha votado, no mostrar resultados
 
-        console.log(`→ ${valor}: ${cantidad} votos (${porcentaje}%)`);
+    onValue(refSurvey, snapshot => {
+      const data = snapshot.val() || {};
+      const totalVotes = Object.values(data).reduce((a, b) => a + b, 0);
 
-        const bar = op.querySelector('.bar-analysis');
-        const perc = op.querySelector('.percentage-analysis');
-        const label = op.querySelector('.label-analysis');
-        const description = op.querySelector('.description-analysis');
+      survey.querySelectorAll('.option-analysis').forEach(option => {
+        const value = option.dataset.value;
+        const count = data[value] || 0;
+        const percent = totalVotes > 0 ? Math.round((count / totalVotes) * 100) : 0;
 
-        const hasVoted = survey.classList.contains('voted') || localStorage.getItem(`voted_${survey.id}`) === 'true';
+        const bar = option.querySelector('.bar-analysis');
+        const perc = option.querySelector('.percentage-analysis');
+        const label = option.querySelector('.label-analysis');
 
-        if (hasVoted) {
-            if (perc) {
-                perc.textContent = `${porcentaje}%`;
-                perc.style.display = 'inline-block';
-            }
-            if (bar) {
-                bar.style.transition = 'width 0.6s ease';
-                bar.style.width = `${porcentaje}%`;
-            }
-            if (description) description.style.display = 'none';
-            if (label) label.style.opacity = '1';
-        } else {
-            if (perc) perc.style.display = 'none';
-            if (bar) bar.style.width = '0%';
-            if (label) label.style.opacity = '0.6';
+        if (perc) {
+          perc.textContent = `${percent}%`;
+          perc.style.display = 'inline-block';
         }
+        if (bar) {
+          bar.style.backgroundColor = '#2569ce';
+          bar.style.transition = 'width 0.6s ease';
+          bar.style.width = `${percent}%`;
+        }
+        if (label) {
+          if (percent >= 75) label.style.color = '#0056b3';
+          else if (percent >= 50) label.style.color = '#007bff';
+          else if (percent >= 25) label.style.color = '#66b3ff';
+          else label.style.color = '#cce5ff';
+        }
+      });
+    }, {
+      onlyOnce: true
     });
+  });
 }
 
 // ✅ 5. Función para votar
 async function voteAnalysis(surveyId, optionValue) {
-    console.log(`[voteAnalysis] Votando en ${surveyId} con opción:`, optionValue);
-    const survey = document.querySelector(`.ia-survey-analysis#${surveyId}`);
-    if (!survey || survey.classList.contains('voted')) {
-        console.warn(`[voteAnalysis] Encuesta no encontrada o ya votada: ${surveyId}`);
-        return;
-    }
+  const survey = document.querySelector(`.ia-survey-analysis#${surveyId}`);
+  if (!survey || survey.classList.contains('voted')) return;
 
-    const encuestaRef = ref(db, `encuestas_analisis/${surveyId}`);
+  const optionRef = ref(db, `encuestas_analisis/${surveyId}/${optionValue}`);
 
-    try {
-        await push(encuestaRef, {
-            respuesta: optionValue,
-            timestamp: Date.now(),
-            fecha: new Date().toISOString()
-        });
+  try {
+    const snapshot = await get(optionRef);
+    const current = snapshot.exists() ? snapshot.val() : 0;
+    await update(ref(db, `encuestas_analisis/${surveyId}`), {
+      [optionValue]: current + 1
+    });
 
-        console.log("[voteAnalysis] Voto registrado en Firebase");
+    localStorage.setItem(`voted_${surveyId}`, 'true');
+    survey.classList.add('voted');
 
-        localStorage.setItem(`voted_${surveyId}`, 'true');
-        survey.classList.add('voted');
-        survey.querySelectorAll('.option-analysis').forEach(opt => {
-            opt.classList.add('voted');
-            opt.querySelector('.bar-analysis').style.opacity = '1';
+    // Mostrar solo los resultados de la encuesta específica
+    const refSurvey = ref(db, `encuestas_analisis/${surveyId}`);
+    const hasVoted = localStorage.getItem(`voted_${surveyId}`) === 'true';
 
-            const perc = opt.querySelector('.percentage-analysis');
-            if (perc) perc.style.display = 'inline-block';
-
-            if (opt.dataset.value === optionValue) {
-                opt.classList.add('selected');
-            }
-        });
-
-        const confirmation = document.createElement('div');
-        confirmation.textContent = '¡Voto registrado!';
-        confirmation.style.cssText = `
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #2f8127;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            z-index: 1000;
-        `;
-        document.body.appendChild(confirmation);
-        setTimeout(() => confirmation.remove(), 2000);
-
-        console.log("[voteAnalysis] Solicitando resultados actualizados...");
-        const snapshot = await get(encuestaRef);
+    if (hasVoted) {
+      onValue(refSurvey, snapshot => {
         const data = snapshot.val() || {};
-        updateAnalysisResults(survey, data);
+        const totalVotes = Object.values(data).reduce((a, b) => a + b, 0);
 
-        setTimeout(() => {
-            const next = survey.closest('.slide').nextElementSibling;
-            if (next && next.classList.contains('slide')) {
-                document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
-                next.classList.add('active');
-                console.log(`[voteAnalysis] Avanzando a la siguiente encuesta`);
-            }
-        }, 3000);
+        survey.querySelectorAll('.option-analysis').forEach(option => {
+          const value = option.dataset.value;
+          const count = data[value] || 0;
+          const percent = totalVotes > 0 ? Math.round((count / totalVotes) * 100) : 0;
 
-    } catch (error) {
-        console.error('Error al registrar el voto:', error);
-        alert('Error al registrar el voto. Por favor, intenta de nuevo.');
+          const bar = option.querySelector('.bar-analysis');
+          const perc = option.querySelector('.percentage-analysis');
+          const label = option.querySelector('.label-analysis');
+
+          if (perc) {
+            perc.textContent = `${percent}%`;
+            perc.style.display = 'inline-block';
+          }
+          if (bar) {
+            bar.style.backgroundColor = '#2569ce';
+            bar.style.transition = 'width 0.6s ease';
+            bar.style.width = `${percent}%`;
+          }
+          if (label) {
+            if (percent >= 75) label.style.color = '#0056b3';
+            else if (percent >= 50) label.style.color = '#007bff';
+            else if (percent >= 25) label.style.color = '#66b3ff';
+            else label.style.color = '#cce5ff';
+          }
+        });
+      }, {
+        onlyOnce: true
+      });
     }
+
+    const confirmation = document.createElement('div');
+    confirmation.textContent = '¡Voto registrado!';
+    confirmation.style.cssText = `
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    `;
+    document.body.appendChild(confirmation);
+
+    // Agregar el código del slider
+    setTimeout(() => {
+      confirmation.remove();
+      const next = survey.closest('.slide')?.nextElementSibling;
+      if (next && next.classList.contains('slide')) {
+        document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+        next.classList.add('active');
+      }
+    }, 3000);
+
+  } catch (error) {
+    console.error('Error al votar:', error);
+    alert('Error al registrar el voto. Por favor, intenta nuevamente.');
+  }
 }
 
-// ✅ 6. Mostrar resultados de todas las encuestas
-function showAnalysisResults() {
-    console.log("[showAnalysisResults] Ejecutando showAnalysisResults()");
-    const surveys = document.querySelectorAll('.ia-survey-analysis');
-    surveys.forEach(survey => {
-        const id = survey.id;
-        const encuestaRef = ref(db, `encuestas_analisis/${id}`);
-        console.log(`→ Leyendo datos de Firebase para: ${id}`);
+// ✅ 6. Inicializar encuestas al cargar
 
-        onValue(encuestaRef, snapshot => {
-            const data = snapshot.val() || {};
-            const hasVoted = localStorage.getItem(`voted_${id}`) === 'true';
-
-            console.log(`→ hasVoted (${id}):`, hasVoted);
-
-            if (hasVoted) {
-                updateAnalysisResults(survey, data);
-            }
-        }, {
-            onlyOnce: true
-        });
-    });
-}
-
-// ✅ 7. Inicializar encuestas al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("[DOMContentLoaded] Iniciando encuestas");
-    showAnalysisResults();
+  // No llamamos a showAnalysisResults aquí
+  // Los resultados solo se mostrarán después de votar
 
-    const opciones = document.querySelectorAll('.option-analysis');
-    opciones.forEach(option => {
-        option.addEventListener('click', () => {
-            const surveyId = option.closest('.ia-survey-analysis').id;
-            const optionValue = option.dataset.value;
-            console.log(`[CLICK] Survey: ${surveyId}, Opción: ${optionValue}`);
-            voteAnalysis(surveyId, optionValue);
-        });
+  document.querySelectorAll('.option-analysis').forEach(option => {
+    option.addEventListener('click', () => {
+      const surveyId = option.closest('.ia-survey-analysis').id;
+      const optionValue = option.dataset.value;
+      voteAnalysis(surveyId, optionValue);
     });
+  });
 });
 
 export { voteAnalysis, showAnalysisResults };
