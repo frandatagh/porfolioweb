@@ -367,7 +367,7 @@ body {
 .click-fondo {
     width: 45px;
     height: 45px;
-    background-image: url('../media/details/click-pic.png');
+    background-image: url('../media/details/click-arrow.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -563,7 +563,7 @@ body {
     width: 100%;
 
     margin: auto;
-    background-color: #292b2e;
+    background-color:#142135;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -588,7 +588,7 @@ body {
     border: 2px solid white;
     border-radius: 10px;
     padding-top: 15px;
-    margin: 20px;
+    margin: 5px;
 }
 
 .survey-options-analysis {
@@ -601,8 +601,8 @@ body {
     align-items: center;
     position: relative;
     margin-bottom: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 3px;
+    padding-right: 2px;
     border: 1px solid white;
     border-radius: 8px;
     cursor: pointer;
@@ -612,7 +612,7 @@ body {
 
 
 .option-analysis .percentage-analysis {
-    color: white;
+    color: rgb(194, 15, 15);
     font-weight: bold;
     display: none;
     /* solo se muestra al votar */
@@ -692,7 +692,7 @@ body {
 }
 .slider-pagination {
     text-align: center;
-    margin-top: 20px;
+    margin-bottom: 10px;
 }
 .slider-pagination span {
     cursor: pointer;
@@ -711,9 +711,21 @@ body {
     opacity: 1;
     transform: scale(1.3);
 }
-  .bar-analysis {
+.bar-analysis {
     transition: width 0.5s ease;
-  }
+}
+.msj-confirmacion {
+    display: flex;
+    flex-direction: column;
+    height: 25px;
+    background-color: #000000;
+    color: #FCA311;
+    padding: 1px 10px 0px 10px;
+    text-align: center;
+    border-radius: 3px;
+    font-size: smaller;
+}
+
 
 /*estilos de tarjetas de proyectos*/
 .project-card {

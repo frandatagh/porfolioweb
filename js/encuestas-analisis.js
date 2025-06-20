@@ -32,7 +32,7 @@ function showAnalysisResults() {
     const refSurvey = ref(db, `encuestas_analisis/${id}`);
     const hasVoted = localStorage.getItem(`voted_${id}`) === 'true';
 
-    if (!hasVoted) return; // Si no se ha votado, no mostrar resultados
+    if (!hasVoted) return;
 
     onValue(refSurvey, snapshot => {
       const data = snapshot.val() || {};
@@ -86,7 +86,6 @@ async function voteAnalysis(surveyId, optionValue) {
     localStorage.setItem(`voted_${surveyId}`, 'true');
     survey.classList.add('voted');
 
-    // Mostrar solo los resultados de la encuesta específica
     const refSurvey = ref(db, `encuestas_analisis/${surveyId}`);
     const hasVoted = localStorage.getItem(`voted_${surveyId}`) === 'true';
 
@@ -140,13 +139,13 @@ async function voteAnalysis(surveyId, optionValue) {
     `;
     document.body.appendChild(confirmation);
 
-    // Agregar el código del slider
     setTimeout(() => {
       confirmation.remove();
       const next = survey.closest('.slide')?.nextElementSibling;
       if (next && next.classList.contains('slide')) {
         document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
         next.classList.add('active');
+        updatePagination();
       }
     }, 3000);
 
@@ -156,18 +155,42 @@ async function voteAnalysis(surveyId, optionValue) {
   }
 }
 
-// ✅ 6. Inicializar encuestas al cargar
+// ✅ 6. Paginación del slider con puntos
+function updatePagination() {
+  const slides = document.querySelectorAll('.slide');
+  const indicators = document.querySelectorAll('.slider-pagination span');
+  slides.forEach((slide, index) => {
+    if (slide.classList.contains('active')) {
+      indicators.forEach(i => i.classList.remove('active'));
+      if (indicators[index]) indicators[index].classList.add('active');
+    }
+  });
+}
 
+// ✅ 7. Inicializar encuestas al cargar
 document.addEventListener("DOMContentLoaded", () => {
-  // No llamamos a showAnalysisResults aquí
-  // Los resultados solo se mostrarán después de votar
-
-  document.querySelectorAll('.option-analysis').forEach(option => {
+  const opciones = document.querySelectorAll('.option-analysis');
+  opciones.forEach(option => {
     option.addEventListener('click', () => {
       const surveyId = option.closest('.ia-survey-analysis').id;
       const optionValue = option.dataset.value;
       voteAnalysis(surveyId, optionValue);
     });
+  });
+
+  // Crear puntos de navegación automáticamente
+  const pagination = document.querySelector('.slider-pagination');
+  const slides = document.querySelectorAll('.slide');
+  slides.forEach((_, index) => {
+    const dot = document.createElement('span');
+    dot.innerHTML = '●';
+    if (index === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+      slides[index].classList.add('active');
+      updatePagination();
+    });
+    pagination.appendChild(dot);
   });
 });
 
