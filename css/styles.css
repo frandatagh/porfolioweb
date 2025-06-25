@@ -556,7 +556,7 @@ body {
 .p-analysis {
     margin-left: 170px;
     margin-right: 170px;
-    padding-top: 20px;
+    padding-top: 40px;
     padding-bottom: 30px;
 }
 .section-analysis {
@@ -738,8 +738,8 @@ body {
     flex-wrap: wrap; /* Permite que los elementos se reagrupen */
     justify-content: center; /* Centra horizontalmente en pantallas grandes */
     gap: 20px; /* Espacio entre elementos */
-    padding-top: 20px;
-    padding-bottom: 40px;
+    padding-top: 40px;
+    padding-bottom: 50px;
 }
 .stadistic-panel {
     width: 250px;
@@ -898,7 +898,8 @@ body {
 
 /*estilos de footer*/
 .footer-main {
-    background-color: #222222;
+    width: 80%;
+    margin: auto;
 }
 
 .first-foot {
@@ -928,6 +929,10 @@ body {
         max-height: 10vh;
 
         /* 40% del viewport height */
+    }
+
+    .footer-main {
+        width: 100%;
     }
 
     /* Cuando se agrega la clase "expanded", muestra el contenido completo */
