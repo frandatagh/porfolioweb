@@ -553,9 +553,15 @@ body {
 }
 
 /*seccion de analisis y encuestas*/
+.p-analysis {
+    margin-left: 170px;
+    margin-right: 170px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
 .section-analysis {
     width: 100%;
-    height: 600px;
+    height:fit-content;
     background-color: #14213D;
 }
 
@@ -725,7 +731,59 @@ body {
     border-radius: 3px;
     font-size: smaller;
 }
+/*estadisticas -- paneles*/
+.stadistic-conteiner {
+    display: flex;
+    background-color: #142135;
+    flex-wrap: wrap; /* Permite que los elementos se reagrupen */
+    justify-content: center; /* Centra horizontalmente en pantallas grandes */
+    gap: 20px; /* Espacio entre elementos */
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.stadistic-panel {
+    width: 250px;
+    height: 250px;
+    background-color: #142135;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    border: solid white 2px;
+}
+.up-front {
+    width: 230px;
+    height: 115px;
+    margin-top: 40px;
+    background-color:#142135;
+    justify-items: center;
+    align-content: center;
+}
+.down-front{
+    width: 230px;
+    height: 115px;
+    background-color:#142135;
+    justify-items: center;
+    align-content: center;
+    text-align: center;
+}
+/*Pregunta si gusta el sitio web (like-question)*/
+.bottom-analytic {
+    padding: 30px;
+}
+.like-question {
+    width: 300px;
+    margin: auto;
+    justify-items: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
 
+.like i {
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+}
 
 /*estilos de tarjetas de proyectos*/
 .project-card {
@@ -969,6 +1027,10 @@ body {
         padding: 0px;
         padding-bottom: 40px;
         margin-right: 0px;
+    }
+    .p-analysis {
+        margin-left: 50px;
+        margin-right: 50px;
     }
 
 }
