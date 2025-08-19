@@ -3,7 +3,7 @@
 // Cargar animación timeline
 createLottieOnView({
   elementId: "lottie-timeline",
-  jsonPath: "../media/details/timeline.json",
+  jsonPath: "./media/details/timeline.json",
   loop: false,
   autoplay: false,
   threshold: 0.9, // 90% de vis
@@ -12,7 +12,7 @@ createLottieOnView({
 // Cargar animación progress
 createLottieOnView({
   elementId: "lottie-progress",
-  jsonPath: "../media/details/progress.json",
+  jsonPath: "./media/details/progress.json",
   loop: false,
   autoplay: false,
   threshold: 0.9, // 90% de vis

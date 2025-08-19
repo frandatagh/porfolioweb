@@ -569,13 +569,14 @@ body {
 .analysis {
     width: 100%;
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 20px;
     margin: auto;
     background-color: #142135;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 
 .first-panel,
 .second-panel,
@@ -598,7 +599,7 @@ body {
     border: 2px solid white;
     border-radius: 10px;
     padding-top: 15px;
-    margin: 5px;
+    margin: 10px;
 }
 
 .survey-options-analysis {
@@ -689,6 +690,7 @@ body {
 .slider-analysis {
     position: relative;
     overflow: hidden;
+    margin-top: 20px;
 }
 
 .slide {
@@ -1013,10 +1015,22 @@ body {
 .second-foot {
     padding-left: 60px;
     padding-right: 60px;
+    font-size: 0.9rem;
+}
+
+.footer-logo {
+    color: rgba(255, 255, 255, 0.76);
+    margin-right: 3px;
+}
+
+.img-footer {
+    width: 200px;
+    height: auto;
 }
 
 .derechos-part {
     font-size: 0.8rem;
+    padding-top: 30px;
     padding-left: 20px;
     color: #676d73;
 }
@@ -1141,6 +1155,18 @@ body {
     .p-analysis {
         margin-left: 50px;
         margin-right: 50px;
+    }
+
+    .second-foot {
+
+        padding-left: 80px;
+        padding-right: 80px;
+        margin-top: -50px;
+    }
+
+    .img-footer {
+        margin-top: 50px;
+        width: 130px;
     }
 
 }
