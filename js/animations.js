@@ -6,8 +6,9 @@ createLottieOnView({
   jsonPath: "./media/details/timeline.json",
   loop: false,
   autoplay: false,
-  threshold: 0.9, // 90% de vis
-  rootMargin: "0px"
+  threshold: 0.9,
+  rootMargin: "0px",
+  delay: 1000 // Espera 1s antes de iniciar
 });
 // Cargar animación progress
 createLottieOnView({
@@ -15,20 +16,21 @@ createLottieOnView({
   jsonPath: "./media/details/progress.json",
   loop: false,
   autoplay: false,
-  threshold: 0.9, // 90% de vis
-  rootMargin: "0px"
+  threshold: 0.9,
+  rootMargin: "0px",
+  delay: 1000 // Espera 1s antes de iniciar
 });
 
 
-
 function createLottieOnView({
-  elementId,       // ID del div donde irá la animación
-  jsonPath,        // Ruta al archivo .json de Lottie
-  loop = false,    // ¿Repetir animación?
-  autoplay = false,// ¿Arrancar sola apenas se carga?
-  renderer = "svg",// Renderer: 'svg', 'canvas' o 'html'
-  threshold = 0.5, // % de visibilidad para disparar animación
-  rootMargin = "0px" // Margen del observer
+  elementId,        // ID del div donde irá la animación
+  jsonPath,         // Ruta al archivo .json de Lottie
+  loop = false,     // ¿Repetir animación?
+  autoplay = false, // ¿Arrancar sola apenas se carga?
+  renderer = "svg", // Renderer: 'svg', 'canvas' o 'html'
+  threshold = 0.5,  // % de visibilidad para disparar animación
+  rootMargin = "0px", // Margen del observer
+  delay = 0         // ⏳ Delay en ms antes de reproducir
 }) {
   // 1. Selecciona el contenedor
   const container = document.getElementById(elementId);
@@ -50,8 +52,10 @@ function createLottieOnView({
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        animation.stop();  // Reinicia desde el frame 0
-        animation.play();  // Reproduce animación
+        setTimeout(() => {
+          animation.stop();  // Reinicia desde el frame 0
+          animation.play();  // Reproduce animación
+        }, delay);
       }
     });
   }, { threshold: threshold, rootMargin: rootMargin });
@@ -59,7 +63,7 @@ function createLottieOnView({
   // 4. Activa el observer
   observer.observe(container);
 
-  // 5. Devuelve la animación por si querés controlarla manualmente
+  // 5. Devuelve la animación y el observer por si los querés controlar manualmente
   return { animation, observer };
 }
 

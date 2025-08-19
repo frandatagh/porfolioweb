@@ -865,7 +865,7 @@ body {
     border: #000 solid 2px;
     color: #000;
     font-weight: 600;
-    border-radius: 8px;
+    border-radius: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -898,6 +898,7 @@ body {
     margin: auto;
     background-color: #14213D;
     border: 5px solid #343a40;
+    border-radius: 15px;
 }
 
 .project-card:hover {
@@ -909,6 +910,7 @@ body {
     border: 3px solid #343a40;
     width: 255px;
     height: 220px;
+    border-radius: 15px;
 }
 
 .button-sabermas {
