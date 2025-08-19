@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
 </head>
 <body>
   <div class="sidebar" id="sidebar">
@@ -176,6 +177,32 @@
       </div>  
     </div>
   </div>  
+  <div class="stadistic-conteiner">
+      <div class="stadistic-panel">
+        <div class="first-up-front">
+          <h5>Crea el proyecto<br/>que siempre deseaste</h5>
+        </div>
+        <div class="first-down-front"><div id="lottie-timeline"></div></div>
+        <button class="button-stadistic-panel">Contáctame</button>
+      </div>
+      <div class="stadistic-panel">
+        <div class="second-up-front"><div class="stat-box">
+          <span id="counter" data-target="94">0</span>%
+        </div></div>
+        <div class="second-down-front">
+          <h5>Optimización y eficacia</br>de servicios</h5>
+        </div>
+        <button class="button-stadistic-panel">Conoce más</button>
+      </div>
+      <div class="stadistic-panel">
+        <div class="third-up-front"><div id="lottie-progress"></div></div>
+        <div class="third-down-front">
+          <h5>Soluciones escalables</br>del software</h5>
+        </div>
+        <button class="button-stadistic-panel">Mis proyectos</button>
+      </div>
+      
+    </div>
   <div class="section-analysis">
     <div class="analysis">
       <h3>Análisis y Estadística</h3>
@@ -257,21 +284,21 @@
             <h3 class="fs-6 d-flex justify-content-center">¿Qué pensás cuando escuchás “Big Data”?</h3>
             <div class="survey-options-analysis">
               <div class="option-analysis" data-value="empresas">
-                <span class="label-analysis">Algo complejo de las empresas</span>
+                <span class="label-analysis">Algo complejo de empresas</span>
                 <div class="bar-container-analysis">
                   <div class="bar-analysis" style="width: 0%"></div>
                 </div>
                 <span class="percentage-analysis"></span>
               </div>
               <div class="option-analysis" data-value="datos_dificiles">
-                <span class="label-analysis">Muchos datos difíciles de entender</span>
+                <span class="label-analysis">Datos difíciles de entender</span>
                 <div class="bar-container-analysis">
                   <div class="bar-analysis" style="width: 0%"></div>
                 </div>
                 <span class="percentage-analysis"></span>
               </div>
               <div class="option-analysis" data-value="patrones_ocultos">
-                <span class="label-analysis">Información que revela patrones ocultos</span>
+                <span class="label-analysis">Información de patrones ocultos</span>
                 <div class="bar-container-analysis">
                   <div class="bar-analysis" style="width: 0%"></div>
                 </div>
@@ -301,26 +328,7 @@
         <p>¡Gracias por votar, sigue juntando más clicks!</p>
       </div>
     </div>
-    <div class="stadistic-conteiner">
-      <div class="stadistic-panel">
-        <div class="up-front"><h1>500</h1></div>
-        <div class="down-front">
-          <h5>¡Votos registrados<br/> en todo el sitio web!</h5>
-        </div>
-      </div>
-      <div class="stadistic-panel">
-        <div class="up-front"><h1>90%</h1></div>
-        <div class="down-front">
-          <h5>Usuarios les gusta el porfolio</h5>
-        </div>
-      </div>
-      <div class="stadistic-panel">
-        <div class="up-front"><h1>10</h1></div>
-        <div class="down-front">
-          <h5>Muchos proyectos para ver</h5>
-        </div>
-      </div>
-    </div>
+    
     <div class="bottom-analytic">
       <div class="like-question">
         <div class="quest">
@@ -478,6 +486,7 @@
     window.showAnalysisResults = showAnalysisResults;
   </script>
   <script type="module" src="./js/encuestas-analisis.js"></script>
+  <script src="./js/animations.js"></script>
   <script src="./js/contact.js"></script>
   <script type="module" src="./js/scripts.js"></script>
   <script src="./js/bootstrap.min.js"></script>

@@ -188,7 +188,7 @@ body {
 
 .container-fondo {
     background-image: url('../media/fondo.png');
-    background-size:cover;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
@@ -559,23 +559,27 @@ body {
     padding-top: 40px;
     padding-bottom: 30px;
 }
+
 .section-analysis {
     width: 100%;
-    height:fit-content;
+    height: fit-content;
     background-color: #14213D;
 }
 
 .analysis {
     width: 100%;
-
+    padding-top: 100px;
+    padding-bottom: 100px;
     margin: auto;
-    background-color:#142135;
+    background-color: #142135;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.first-panel, .second-panel, .third-panel {
+.first-panel,
+.second-panel,
+.third-panel {
     background-color: transparent;
     width: 100%;
     margin-bottom: 20px;
@@ -671,11 +675,12 @@ body {
 }
 
 .option-analysis.selected .label-analysis {
-    color: #28a745; /* verde éxito */
+    color: #28a745;
+    /* verde éxito */
     font-weight: bold;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
 }
-  
+
 .option-analysis.selected {
     background-color: rgba(40, 167, 69, 0.1);
     border-color: #28a745;
@@ -685,27 +690,38 @@ body {
     position: relative;
     overflow: hidden;
 }
+
 .slide {
     display: none;
     animation: fadein 0.4s ease;
 }
+
 .slide.active {
     display: block;
 }
+
 @keyframes fadein {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
+
 .slider-pagination {
     text-align: center;
     margin-bottom: 10px;
 }
+
 .slider-pagination span {
     cursor: pointer;
     font-size: 20px;
     margin: 0 5px;
     opacity: 0.3;
 }
+
 .slider-pagination span {
     cursor: pointer;
     font-size: 22px;
@@ -717,9 +733,11 @@ body {
     opacity: 1;
     transform: scale(1.3);
 }
+
 .bar-analysis {
     transition: width 0.5s ease;
 }
+
 .msj-confirmacion {
     display: flex;
     flex-direction: column;
@@ -731,46 +749,132 @@ body {
     border-radius: 3px;
     font-size: smaller;
 }
+
 /*estadisticas -- paneles*/
 .stadistic-conteiner {
     display: flex;
-    background-color: #142135;
-    flex-wrap: wrap; /* Permite que los elementos se reagrupen */
-    justify-content: center; /* Centra horizontalmente en pantallas grandes */
-    gap: 20px; /* Espacio entre elementos */
+    background-color: #181818;
+    flex-wrap: wrap;
+    /* Permite que los elementos se reagrupen */
+    justify-content: center;
+    /* Centra horizontalmente en pantallas grandes */
+    gap: 20px;
+    /* Espacio entre elementos */
     padding-top: 40px;
     padding-bottom: 50px;
 }
+
 .stadistic-panel {
-    width: 250px;
-    height: 250px;
-    background-color: #142135;
+    width: 280px;
+    height: 220px;
+    background-color: #181818;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10px;
-    border: solid white 2px;
+    border-radius: 10%;
 }
-.up-front {
-    width: 230px;
-    height: 115px;
-    margin-top: 40px;
-    background-color:#142135;
+
+#lottie-timeline {
+    width: 270px;
+    height: 80px;
+    margin: auto;
+}
+
+.first-up-front {
+    width: 100%;
+    height: 120px;
+    margin-top: 20px;
+    margin-bottom: -40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first-up-front h5 {
+    font-size: 1.5rem;
+}
+
+.first-down-front {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second-up-front {
+    margin-top: 30px;
     justify-items: center;
     align-content: center;
 }
-.down-front{
-    width: 230px;
-    height: 115px;
-    background-color:#142135;
+
+.stat-box {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.second-down-front {
     justify-items: center;
     align-content: center;
     text-align: center;
 }
+
+.second-down-front h5 {
+    font-size: 1.5rem;
+}
+
+#lottie-progress {
+    width: 200px;
+    height: 130px;
+    margin: auto;
+}
+
+.third-up-front {
+    width: 100%;
+    height: 120px;
+    margin-top: -10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.third-down-front {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.third-down-front h5 {
+    font-size: 1.5rem;
+}
+
+
+
+.button-stadistic-panel {
+    width: 150px;
+    height: 30px;
+    background-color: #FCA311;
+    border: #000 solid 2px;
+    color: #000;
+    font-weight: 600;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+
 /*Pregunta si gusta el sitio web (like-question)*/
 .bottom-analytic {
     padding: 30px;
 }
+
 .like-question {
     width: 300px;
     margin: auto;
@@ -1033,6 +1137,7 @@ body {
         padding-bottom: 40px;
         margin-right: 0px;
     }
+
     .p-analysis {
         margin-left: 50px;
         margin-right: 50px;
