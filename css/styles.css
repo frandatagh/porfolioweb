@@ -872,9 +872,97 @@ body {
     margin-top: auto;
 }
 
+/*banner de genio 001b2a*/
+.banner-genius {
+    background-color: #001b2a;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.banner-titulo {
+    width: 100%;
+    text-align: center;
+    font-family: 'contador-font';
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: -30px;
+    z-index: 1;
+}
+
+.img-genius {
+    width: 700px;
+    height: 350px;
+}
+
+.circle-img {
+    background-image: url('../media/genius/geniusHi.png');
+    width: 100%;
+    /* Ocupará el 100% del ancho del contenedor padre */
+    height: 100%;
+    /* La altura es 30% del ancho (300/1000 = 0.3 = 30%) */
+    background-size: cover;
+    /* Asegura que la imagen cubra todo el área */
+    background-position: center;
+    /* Centra la imagen en el div */
+    background-repeat: no-repeat;
+
+    /* Estilos Flexbox */
+    position: relative;
+    /* Clave para posicionar el contenedor interno */
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+}
+
+.counter-genius-banner {
+    width: 190px;
+    height: 220px;
+    position: absolute;
+    /* Permite posicionarlo dentro del div padre */
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, -50%);
+    /* Centra el elemento exactamente */
+    text-align: center;
+    /* Centra el contenido (contador y botón) */
+    color: white;
+    /* Color del texto para que se vea sobre la imagen */
+}
+
+#counter-genius {
+    font-family: 'contador-font';
+    font-size: 4.3rem;
+    margin-bottom: 10px;
+}
+
+#change-genius-banner {
+    background-color: #FCA311;
+    width: 180px;
+    height: 50px;
+    color: #000;
+    font-family: 'contador-font';
+    font-size: 1.9rem;
+    border: 2px solid black;
+    border-radius: 30px;
+}
+
+.p-genius {
+    font-size: 0.7rem;
+    color: gray;
+    text-decoration: underline;
+    margin-top: 40px;
+}
+
 /*Pregunta si gusta el sitio web (like-question)*/
 .bottom-analytic {
     padding: 30px;
+    height: 180px;
+    background-color: #001b2a;
 }
 
 .like-question {
@@ -886,12 +974,17 @@ body {
 }
 
 .like i {
-    font-size: 20px;
+    font-size: 30px;
     padding: 5px;
     cursor: pointer;
 }
 
 /*estilos de tarjetas de proyectos*/
+.projects-section {
+    background-color: #181818;
+    padding-bottom: 40px;
+}
+
 .project-card {
     width: 300px;
     height: 400px;
@@ -950,7 +1043,6 @@ body {
 
 /*estilos del formulario de envio de mail*/
 #mail-main {
-    margin-top: 80px;
     height: 500px;
     background-color: #14213D;
 }
@@ -1169,6 +1261,18 @@ body {
     .img-footer {
         margin-top: 50px;
         width: 130px;
+    }
+
+    .banner-genius {
+        height: 350px;
+    }
+
+    .circle-img {
+        /* Estilos para pantallas medianas y pequeñas (tablets y móviles) */
+        width: 85%;
+        max-height: 290px;
+        margin-left: 50px;
+
     }
 
 }
