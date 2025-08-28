@@ -910,7 +910,6 @@ body {
     background-position: center;
     /* Centra la imagen en el div */
     background-repeat: no-repeat;
-
     /* Estilos Flexbox */
     position: relative;
     /* Clave para posicionar el contenedor interno */
@@ -924,6 +923,7 @@ body {
 .counter-genius-banner {
     width: 190px;
     height: 220px;
+    display: block;
     position: absolute;
     /* Permite posicionarlo dentro del div padre */
     top: 50%;
@@ -940,6 +940,18 @@ body {
     font-family: 'contador-font';
     font-size: 4.3rem;
     margin-bottom: 10px;
+    font-weight: bold;
+    /* 'font-border' is not a valid property. Use 'font-weight: bold' to make the text bold. */
+    transition: transform 0.2s ease;
+    -webkit-text-stroke: 2px rgb(139, 139, 139);
+    /* This adds a 2px black stroke */
+    color: white;
+    /* This sets the inner color of the text */
+}
+
+#counter-genius.pop {
+    transform: scale(1.3);
+    color: #ff3333;
 }
 
 #change-genius-banner {
