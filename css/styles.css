@@ -19,7 +19,7 @@ body {
 }
 
 body {
-    background-color: rgb(34, 34, 34);
+    background-color: #181818;
     color: white;
     padding-left: 70px;
 }
@@ -975,8 +975,8 @@ body {
 
 /*Pregunta si gusta el sitio web (like-question)*/
 .bottom-analytic {
-    padding: 30px;
-    height: 180px;
+    padding: 20px;
+    height: 140px;
     background-color: #001b2a;
 }
 
@@ -985,7 +985,6 @@ body {
     margin: auto;
     justify-items: center;
     padding-top: 10px;
-    padding-bottom: 15px;
 }
 
 .like i {
