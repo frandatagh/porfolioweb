@@ -60,7 +60,11 @@ function handleClick() {
       backgroundDiv.style.backgroundImage = "url('./media/genius/progressGenius/4.png')";
     } else if (localClickCount === 5) {
       backgroundDiv.style.backgroundImage = "url('./media/genius/progressGenius/5.png')";
-    } 
+    } else if (localClickCount === 6) {
+      backgroundDiv.style.backgroundImage = "url('./media/genius/progressGenius/6.png')";
+    } else if (localClickCount === 7) {
+      backgroundDiv.style.backgroundImage = "url('./media/genius/progressGenius/7.png')";
+    }
   }
   
 
