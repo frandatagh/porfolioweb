@@ -28,7 +28,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     width: 70px;
     background-color: #343a40;
     display: flex;
@@ -189,8 +189,7 @@ body {
 .container-fondo {
     background-color: #001b2a;
     width: 100%;
-    height: 100vh;
-    min-height: 100vh;
+    height: 650px;
     display: flex;
     align-items: center;
     justify-content: center;
