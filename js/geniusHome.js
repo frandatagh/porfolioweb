@@ -51,27 +51,23 @@ function handleClick() {
   // ✅ Cambiar imagen de fondo según número de clicks
   if (backgroundDiv) {
     if (localClickCount === 1) {
-      backgroundDiv.style.backgroundImage = "url('./media/genius/progressGenius/1.png')";
+      backgroundDiv.style.backgroundImage = "url('./media/genius/2.png')";
     } else if (localClickCount === 2) {
-      backgroundDiv.style.backgroundImage = "url('./media/genius/progressGenius/2.png')";
+      backgroundDiv.style.backgroundImage = "url('./media/genius/3.png')";
     } else if (localClickCount === 3) {
-      backgroundDiv.style.backgroundImage = "url('./media/genius/progressGenius/3.png')";
+      backgroundDiv.style.backgroundImage = "url('./media/genius/4.png')";
     } else if (localClickCount === 4) {
-      backgroundDiv.style.backgroundImage = "url('./media/genius/progressGenius/4.png')";
-    } else if (localClickCount === 5) {
-      backgroundDiv.style.backgroundImage = "url('./media/genius/progressGenius/5.png')";
-    } else if (localClickCount === 6) {
-      backgroundDiv.style.backgroundImage = "url('./media/genius/progressGenius/6.png')";
-    } else if (localClickCount === 7) {
-      backgroundDiv.style.backgroundImage = "url('./media/genius/progressGenius/7.png')";
-    }
+      backgroundDiv.style.backgroundImage = "url('./media/genius/5.png')";
+    } 
   }
   
 
   // ✅ Animación del contador
   if (counterDisplay) {
     counterDisplay.classList.add("pop");
-    setTimeout(() => counterDisplay.classList.remove("pop"), 200);
+    setTimeout(() => counterDisplay.classList.remove("pop"), 100);
+    button.classList.add("pop");
+    setTimeout(() => button.classList.remove("pop"), 100);
   }
 }
 
